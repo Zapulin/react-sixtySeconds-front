@@ -11,7 +11,8 @@ function App() {
         </p>
         <p>Test Merge</p>
 
-        <p>AAA</p>
+        <p>AAAñ
+          kikññ</p>
         <a
           className="App-link"
           href="https://reactjs.org"
