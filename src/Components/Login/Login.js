@@ -1,6 +1,4 @@
 
-import 'Login.css';
-
 function Login() {
     return (
 	<form method="POST" action="Login.php">

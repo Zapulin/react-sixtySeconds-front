@@ -11,7 +11,6 @@ function App() {
         </p>
         <p>Test Merge</p>
 
-        <p>Open</p>
         <a
           className="App-link"
           href="https://reactjs.org"
