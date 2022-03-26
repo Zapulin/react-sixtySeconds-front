@@ -5,15 +5,11 @@ import Login from "./components/Login";
 function App() {
   return (
     <div className="app">
-      <header>
-        <Header />
-      </header>
+      <Header />
       <div className="main-content">
 	      <Login />
       </div>
-      <footer>
-	      <Footer />
-      </footer>
+	    <Footer />
     </div>
   );
 }
