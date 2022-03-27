@@ -11,7 +11,10 @@ function Header() {
 	return (
 		<header>
 			{ /* TODO: add logo */ }
-			<form><input type="text" placeholder="Search..." required></input><button type="submit"></button></form>
+			<form>
+				<input type="text" placeholder="Search..." required></input>
+				<button type="submit"></button>
+			</form>
 			{ isLogged ? (
 				<ul>
 					<li><Publish /></li>
