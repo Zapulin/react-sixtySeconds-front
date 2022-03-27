@@ -1,7 +1,7 @@
 
 function Signup() {
     return (
-        <div className="signup">
+        <div className="dropdown">
             <form name="signup" method="POST" action="signup.php">
                 <fieldset>
                     <legend>Registration form</legend>
