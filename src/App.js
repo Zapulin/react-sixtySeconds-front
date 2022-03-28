@@ -1,19 +1,20 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+//Pages
+import Home from './Pages/Home'
+import Feed from './Pages/Feed'
+import User from './Pages/Profile'
+import NotFound from './Pages/NotFound'
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="app">
-        <Header />
-        <div className="main-content">
-          <Routes>
-            <Route path="/" />
-          </Routes>
-        </div>
-        <Footer />
-      </div>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/feed' element={<Feed/>} />
+        <Route path='/profile/:id' element={<User/>} />
+        <Route path='*' element={<NotFound/>} />
+      </Routes>
     </BrowserRouter>
   );
 }

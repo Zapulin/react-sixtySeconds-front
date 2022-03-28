@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-export default class Publish extends Component {
+export default class Likes extends Component {
   render() {
     return (
-      <div>Publish</div>
+      <div>Likes</div>
     )
   }
 }
