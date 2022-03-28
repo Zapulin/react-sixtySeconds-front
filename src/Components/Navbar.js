@@ -5,7 +5,7 @@ import Signup from "./Signup";
 import Publish from "./Publish";
 import Activity from "./Activity";
 
-function Header() {
+function Navbar() {
 	const [isLogged, setIsLogged] = useState(false);
 
 	return (
@@ -32,4 +32,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Navbar;
