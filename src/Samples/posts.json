@@ -1,0 +1,54 @@
+[
+    {
+        "id": 0,
+        "author": "PacoChistes",
+        "userName": "pacoChistes",
+        "title": "Va chiste verdeeee #hastag,#hastag,#hastag,#hastag",
+        "audioId": 1,
+        "userId": 0,
+        "category": "Humor",
+        "creationDate": "01/01/2022",
+        "likes": 3,
+        "dislikes": 6,
+        "comments": [
+            {
+                "commentId": 0,
+                "author": "Yeray Campos",
+                "userName": "luma",
+                "audioId": 3,
+                "likes": 100,
+                "dislikes": 2
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "author": "JuanRavan",
+        "userName": "ravaniño",
+        "title": "Debate Gol de messi",
+        "audioId": 2,
+        "userId": 1,
+        "category": "Deportes",
+        "creationDate": "01/01/2022",
+        "likes": 3,
+        "dislikes": 6,
+        "comments": [
+            {
+                "commentId": 1,
+                "author": "Maria Acosta",
+                "userName": "macosta",
+                "audioId": 3,
+                "likes": 100,
+                "dislikes": 2
+            },
+            {
+                "commentId": 1,
+                "author": "Maria Acosta",
+                "userName": "macosta",
+                "audioId": 3,
+                "likes": 100,
+                "dislikes": 2
+            }
+        ]
+    }
+]
