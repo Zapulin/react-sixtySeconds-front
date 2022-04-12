@@ -22,11 +22,11 @@ export default class Post extends Component {
         <br/>
         <p>{post.title}</p>
         <br/>
-        <Audio/>
+        <Audio id={post.audioId}/>
         <p>Commentarios {post.comments.length}</p>
         <br/>
         <br/>
-        <Comments comments={post.comments}/>
+        <Comments comments={post.comments} key={post.id}/>
       </div>
     )
   }

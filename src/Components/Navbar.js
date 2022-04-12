@@ -18,9 +18,9 @@ function Navbar() {
 			{ isLogged ? (
 				<ul>
 					<li><Publish /></li>
-					<li><Link to="/">Home{  /* TODO: add home icon */ }</Link></li>
+					<li><Link to="/feed">Home{  /* TODO: add home icon */ }</Link></li>
 					<li><Activity /></li>
-					<li><Link to="/profile">Profile{  /* TODO: add user pic */ }</Link></li>
+					<li><Link to="/profile/1">Profile{  /* TODO: add user pic */ }</Link></li>
 				</ul>
 			) : (
 				<ul>
