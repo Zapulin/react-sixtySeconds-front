@@ -21,8 +21,8 @@ export default class Comment extends Component {
           <span>{comment.creationDate /*TODO: funcion date*/}</span>
           <span> Respondio...</span>
         </p>
-        <Audio id={comment.commentId}/>
-        <Likes id={comment.likes} /> 
+        <Audio/>
+        <Likes /> 
         <p>Dislikes {comment.dislikes}</p>
       </div>
     )

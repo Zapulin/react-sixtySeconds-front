@@ -5,11 +5,12 @@ import Footer from '../Components/Footer'
 import Navbar from '../Components/Navbar'
 
 function Home() {
+
   return (
     <> 
     <Navbar/>
       <div className="container-fluid">
-          <div class="position-relative">
+          <div className="position-relative">
             <img className="img-fluid" src={top_image} alt="" />
             <div className="card rounded m-2 p-2 position-absolute top-50" style={{background:'#FF8638'}}>
                  <span> The audio social media </span>

@@ -9,8 +9,6 @@ export default class Comments extends Component {
 
     const {comments} = this.props
 
-    console.log(comments)
-
     return comments.map(comment => 
     <Comment comment={comment} key={comments.commentId /*Possible error no commentid=undefined*/}/>);
 

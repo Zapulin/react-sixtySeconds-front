@@ -15,7 +15,7 @@
                 "commentId": 0,
                 "author": "Yeray Campos",
                 "userName": "luma",
-                "audioId": 3,
+                "audioId": 1,
                 "likes": 100,
                 "dislikes": 2
             }
@@ -37,12 +37,12 @@
                 "commentId": 1,
                 "author": "Maria Acosta",
                 "userName": "macosta",
-                "audioId": 3,
+                "audioId": 2,
                 "likes": 100,
                 "dislikes": 2
             },
             {
-                "commentId": 1,
+                "commentId": 2,
                 "author": "Maria Acosta",
                 "userName": "macosta",
                 "audioId": 3,
