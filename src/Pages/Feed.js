@@ -11,7 +11,6 @@ export default class Feed extends Component {
       <div>
         <Categories/>
         <Posts />
-        <Footer/>
       </div>
     )
   }
