@@ -19,10 +19,8 @@ export default class Profile extends Component {
   render() {
     return (
       <div>
-        <Navbar/>
         <HeaderProfile profile={data} key={data.userId}/>
         <Posts posts={data} key={data.userId}/>
-        <Footer/>
       </div>
     )
   }
