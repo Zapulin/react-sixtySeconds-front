@@ -31,7 +31,7 @@ function Navbar() {
                 aria-label="Search"
               />
             </div>
-            <div class="navbar-nav">
+            <div className="navbar-nav">
               {isLogged ? (
                 <div className="d-flex ms-auto gap-2">
                   <Link to="/feed">
@@ -39,7 +39,7 @@ function Navbar() {
                       type="button"
                       className="btn btn-dark rounded-circle"
                     >
-                      <i class="fa fa-plus"></i>
+                      <i className="fa fa-plus"></i>
                     </button>
                   </Link>
 
@@ -49,7 +49,7 @@ function Navbar() {
                       type="button"
                       className="btn btn-dark rounded-circle"
                     >
-                      <i class="fa fa-home"></i>
+                      <i className="fa fa-home"></i>
                     </button>
                   </Link>
 
@@ -59,21 +59,21 @@ function Navbar() {
                       type="button"
                       className="btn btn-dark rounded-circle"
                     >
-                      <i class="fa fa-bell"></i>
+                      <i className="fa fa-bell"></i>
                     </button>
                   </Link>
 
-                  <div class="nav-item dropdown">
+                  <div clclassNameass="nav-item dropdown">
                     <a
                       href="#"
                       data-toggle="dropdown-menu"
                       class="nav-link dropdown-toggle user-action"
                     >
-                      <img src={ImageProfile} class="avatar" alt="Avatar" />{" "}
+                      <img src={ImageProfile} className="avatar" alt="Avatar" />{" "}
                     </a>
-                    <div class="dropdown-menu">
-                      <a href="#" class="dropdown-item">
-                        <i class="fa fa-user-o"></i> Profile
+                    <div className="dropdown-menu">
+                      <a href="#" className="dropdown-item">
+                        <i className="fa fa-user-o"></i> Profile
                       </a>
                       {/* <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a></a>
 					<a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a></a>
@@ -87,7 +87,7 @@ function Navbar() {
                 <div className="d-flex ms-auto gap-2">
                   {/* <input type="text" class="form-control me-sm-2" placeholder="Search"/> */}
                   <button type="button" className="btn btn-dark rounded-pill">
-                    Iniciar sesión ;
+                    Iniciar sesión
                   </button>
                   <button type="button" className="btn btn-dark rounded-pill">
                     Registrarse
