@@ -1,10 +1,10 @@
-function CardHomePage() {
+function InformationSection() {
   return (
     <div className="container p-5">
       <div className="row m-2">
         <div className="col-6">
-          <h3>¿Por qué 60"?</h3>
-          <ul>
+          <h3 style={{ color:'#FF8638'}}>¿Por qué 60"?</h3>
+          <ul style={{'list-style': 'none'}}>
             <li>
               <span>La nueva red social de audio 60" ¡Es la última moda!</span>
             </li>
@@ -17,8 +17,8 @@ function CardHomePage() {
           </ul>
         </div>
         <div className="col-6">
-          <h3>¿Cómo funciona?</h3>
-          <ul>
+          <h3 style={{ color:'#FF8638'}}>¿Cómo funciona?</h3>
+          <ul style={{'list-style': 'none'}}>
             <li>
               <span>Graba lo que te apetezca</span>
             </li>
@@ -38,4 +38,4 @@ function CardHomePage() {
   );
 }
 
-export default CardHomePage;
+export default InformationSection;

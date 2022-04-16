@@ -75,23 +75,21 @@ function Navbar() {
                       <a href="#" className="dropdown-item">
                         <i className="fa fa-user-o"></i> Profile
                       </a>
-                      {/* <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a></a>
-					<a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a></a>
-					<a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a></a>
-					<div class="dropdown-divider"></div>
-					<a href="#" class="dropdown-item"><i class="material-icons">&#xE8AC;</i> Logout</a></a> */}
                     </div>
                   </div>
                 </div>
               ) : (
                 <div className="d-flex ms-auto gap-2">
-                  {/* <input type="text" class="form-control me-sm-2" placeholder="Search"/> */}
-                  <button type="button" className="btn btn-dark rounded-pill">
-                    Iniciar sesión
-                  </button>
-                  <button type="button" className="btn btn-dark rounded-pill">
-                    Registrarse
-                  </button>
+                  <Link to="/login">
+                    <button type="button" className="btn btn-dark rounded-pill">
+                      Iniciar sesión
+                    </button>
+                  </Link>
+                  <Link to="/register">
+                    <button type="button" className="btn btn-dark rounded-pill">
+                      Registrarse
+                    </button>
+                  </Link>
                 </div>
               )}
             </div>

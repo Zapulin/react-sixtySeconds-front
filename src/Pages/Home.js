@@ -1,20 +1,19 @@
 import top_image from "../Resources/images/top_image.svg";
-import "../stylesheets/Home.css";
 
 //Components
-import CardHome from "../Components/CardHome";
-import CardImageHome from "../Components/CardImageHome";
+import NotMemberRegister from "../Components/home/NotMemberRegister";
+import InformationSection from "../Components/home/InformationSection";
 
-function Home() {
+function Home() {  
   return (
     <>
       <div className="fluid">
         <div className="position-relative">
           <img className="img-fluid" src={top_image} alt="" />
+          <NotMemberRegister />
         </div>
       </div>
-      <CardImageHome />
-      <CardHome />
+      <InformationSection />
     </>
   );
 }
