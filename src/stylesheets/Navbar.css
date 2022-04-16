@@ -17,6 +17,8 @@
     background-color: #FF8638;
     padding-left: 16px;
     padding-right: 16px;
+    height: 60px;
+    display: inline-block;
     box-shadow: 0 0 4px rgba(0,0,0,.1);
   }
   .nav-link img {

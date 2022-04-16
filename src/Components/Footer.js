@@ -1,3 +1,4 @@
+import logo from "../Resources/images/logo.svg";
 
 function Footer() {
   return (
@@ -6,11 +7,7 @@ function Footer() {
       <footer className="bg-dark text-center text-white" >
         <div>
           <div className="container p-2 pb-5 mx-auto">
-  
-            <span>60"</span>
-            <br />
-            <span>SixtySeconds</span>
-            <br />
+            <img src={logo} width="120"/>
             <hr />
 
                  {/* Linkedin */}

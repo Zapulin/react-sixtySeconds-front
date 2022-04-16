@@ -6,15 +6,15 @@ function Login() {
       <div class="d-flex justify-content-center p-4">
         <form name="login" method="POST" action="Login.php">
           <fieldset>
-            <legend>Login</legend>
+            <legend>Login</legend><br/>
             <label>
               Usuario o Email:
               <input type="text" name="username" />
-            </label>
+            </label><br/>
             <label>
               Contraseña:
               <input type="password" name="pass" />
-            </label>
+            </label><br/>
             <input type="submit" value="Enviar"></input>
           </fieldset>
         </form>

@@ -1,18 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ImageProfile from "../Samples/profileImg1.jpg";
+import logo from "../Resources/images/dark_logo.svg";
 import "../stylesheets/Navbar.css";
 
 function Navbar() {
-  const [isLogged, setIsLogged] = useState(true);
+  const [isLogged, setIsLogged] = useState(false);
 
   return (
     <header>
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          {/* Logo - por ahora es un link  */}
-          <a href="#" className="navbar-brand">
-            Brand
+          {/* Logo */}
+          <a href="/" className="navbar-brand">
+            <img src={logo} width="60"/>
           </a>
           <button
             type="button"

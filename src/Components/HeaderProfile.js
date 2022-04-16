@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import ImageProfile from "../Samples/profileImg1.jpg";
-import "./../stylesheets/Profile.css";
+//import "./../stylesheets/Profile.css";
 
 export default class HeaderProfile extends Component {
   render() {
