@@ -1,4 +1,3 @@
-import '../stylesheets/Footer.css';
 
 function Footer() {
   return (
@@ -20,7 +19,7 @@ function Footer() {
                 className="btn btn-outline-light btn-floating m-1 rounded-circle"
                 href="https://www.linkedin.com"
                 role="button"
-                target="blank"
+                target="_blank"
               >
                 <i className="fa fa-linkedin"></i>
               </a>
@@ -30,7 +29,7 @@ function Footer() {
                 className="btn btn-outline-light btn-floating m-1 rounded-circle"
                 href="https://twitter.com"
                 role="button"
-                target="blank"
+                target="_blank"
               >
                 <i className="fa fa-twitter"></i>
               </a>
@@ -40,7 +39,7 @@ function Footer() {
                 className="btn btn-outline-light btn-floating m-1 rounded-circle"
                 href="https://www.instagram.com"
                 role="button"
-                target="blank"
+                target="_blank"
               >
                 <i className="fa fa-instagram"></i>
               </a>
@@ -52,7 +51,7 @@ function Footer() {
                 className="btn btn-outline-light btn-floating m-1 rounded-circle"
                 href="https://www.facebook.com"
                 role="button"
-                target="blank"
+                target="_blank"
               >
                 <i className="fa fa-facebook"></i>
               </a>
