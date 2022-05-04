@@ -46,14 +46,14 @@ function Post({ post }) {
         <Likes isLike={false} likes={post.dislikes}/>
         <button onClick={viewComments}>Commentarios {post.comments.length}</button>
         <button onClick={viewRecorder}>Responder</button>
-        <div className={ view ? '' : 'hide-comments' }>
+        <div className={ view ? '' : 'hide' }>
           {
             post.comments.map((comment) =>
             <Comment comment={comment} key={comment.commentId}/>
             )
           }
         </div>
-        <div className={ showRecorder ? '' : 'hide-recorder' }>
+        <div className={ showRecorder ? '' : 'hide' }>
         <Recorder/>  
         </div>
       </div>
