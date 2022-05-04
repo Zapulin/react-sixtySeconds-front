@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Counter from './Counter';
 import likeIcon from '../Resources/icons/like.png';
 import dislikeIcon from '../Resources/icons/dislike.png';
 
@@ -23,7 +22,7 @@ function Likes({ likes, isLike}) {
           src={isLike ? likeIcon : dislikeIcon}
           alt='Like'
           onClick={likeController}/>
-      <Counter numLikes={numLikes} />
+      <span>{numLikes}</span>
     </div>
   );
 }
