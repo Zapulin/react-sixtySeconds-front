@@ -3,7 +3,7 @@ import React from "react";
 function Login() {
   return (
     <div className="container">
-      <div class="d-flex justify-content-center p-4">
+      <div className="d-flex justify-content-center p-4">
         <form name="login" method="POST" action="Login.php">
           <fieldset>
             <legend>Login</legend><br/>

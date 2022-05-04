@@ -1,26 +1,32 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 //Components
 
-import HeaderProfile from '../Components/HeaderProfile'
-import Posts from '../Components/Posts'
-import Login from '../Components/Login'
+import HeaderProfile from '../Components/HeaderProfile';
+import Post from '../Components/Post';
+import Login from '../Components/Login';
 
 //Json
-import data from '../Samples/profile.json'
+import profileJson from '../Samples/profile.json';
 
 
 export default class Profile extends Component {
 
   state = {
-    data: data
+    data: profileJson
   }
 
   render() {
     return (
       <div>
-        <HeaderProfile profile={data} key={data.userId}/>
-        <Posts posts={data} key={data.userId}/>
+        <HeaderProfile profile={this.state.data} key={this.state.data.userId}/>
+        <div>
+        {
+          this.state.data.posts.map((post) =>
+          <Post post={post} key={post.id}/>
+          )
+        }
+        </div>
         <Login />
       </div>
     )

@@ -6,10 +6,10 @@ function NotMemberRegister() {
       className="card rounded m-4 p-2 position-absolute top-50"
       style={{ background: "#FF8638" }}
     >
-      <div class="card-body">
-        <h5 class="card-title">The Audio Social Media</h5>
-        <p class="card-text">¿Aún no eres miembro?</p>
-        <p class="card-text">
+      <div className="card-body">
+        <h5 className="card-title">The Audio Social Media</h5>
+        <p className="card-text">¿Aún no eres miembro?</p>
+        <p className="card-text">
           ¡Regístrate <span>GRATIS!</span>
         </p>
 

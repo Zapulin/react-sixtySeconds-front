@@ -15,26 +15,26 @@ export default class HeaderProfile extends Component {
             <div className="image col-4">
               <img
                 src={ImageProfile}
-                alt={profile[0].name}
+                alt={profile.name}
                 className="rounded-pill"
                 width="155"
               />
             </div>
             <div className="col-4">
-              <div class="rounded text-dark stats p-2">
-              <h4 className="mb-0 mt-0">{profile[0].name}</h4>
+              <div className="rounded text-dark stats p-2">
+              <h4 className="mb-0 mt-0">{profile.name}</h4>
 
-              <span>{profile[0].name}</span>
+              <span>{profile.name}</span>
 
               <div className="p-2 mt-2 d-flex justify-content-between">
                 <div>
                   <div className="d-flex flex-column">
                     <span className="followers">Seguidores</span>{" "}
-                    <span className="nfollowers">{profile[0].followers}</span>
+                    <span className="nfollowers">{profile.followers}</span>
                   </div>
                   <div className="d-flex flex-column">
                     <span className="following">Seguidos</span>{" "}
-                    <span className="nfollowing">{profile[0].following}</span>
+                    <span className="nfollowing">{profile.following}</span>
                   </div>
                   </div>
                 </div>

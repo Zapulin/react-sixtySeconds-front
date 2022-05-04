@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 //Components
-import Recorder from './Recorder'
+import Recorder from './RecorderTest'
 
 //Audio Samples
 import audioMp3 from '../Samples/AUDIOMP3.mp3'

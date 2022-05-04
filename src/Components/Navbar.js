@@ -5,7 +5,7 @@ import logo from "../Resources/images/dark_logo.svg";
 import "../stylesheets/Navbar.css";
 
 function Navbar() {
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(true);
 
   return (
     <header>
@@ -64,16 +64,16 @@ function Navbar() {
                     </button>
                   </Link>
 
-                  <div clclassNameass="nav-item dropdown">
+                  <div className="nav-item dropdown">
                     <a
-                      href="#"
+                      href="s"
                       data-toggle="dropdown-menu"
-                      class="nav-link dropdown-toggle user-action"
+                      className="nav-link dropdown-toggle user-action"
                     >
                       <img src={ImageProfile} className="avatar" alt="Avatar" />{" "}
                     </a>
                     <div className="dropdown-menu">
-                      <a href="#" className="dropdown-item">
+                      <a href="s" className="dropdown-item">
                         <i className="fa fa-user-o"></i> Profile
                       </a>
                     </div>

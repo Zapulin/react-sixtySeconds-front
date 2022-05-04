@@ -1,43 +1,41 @@
-[
-    {
-        "userId": 0,
-        "name": "Paco Leon",
-        "followers": 55365,
-        "following": 123456789,
-        "profileImageId": 0,
-        "profileImage": "../Samples/profileImg1.jpg",
+{
+    "userId": 0,
+    "name": "Paco Leon",
+    "followers": 55365,
+    "following": 123456789,
+    "profileImageId": 0,
+    "profileImage": "../Samples/profileImg1.jpg",
+    "creationDate": "01/01/2022",
+    "posts": [
+        {
+        "id": 1,
+        "author": "JuanRavan",
+        "userName": "ravaniño",
+        "title": "Debate Gol de messi",
+        "audioId": 2,
+        "userId": 1,
+        "category": "Deportes",
         "creationDate": "01/01/2022",
-        "posts": [
+        "likes": 3,
+        "dislikes": 6,
+        "comments": [
             {
-            "id": 1,
-            "author": "JuanRavan",
-            "userName": "ravaniño",
-            "title": "Debate Gol de messi",
-            "audioId": 2,
-            "userId": 1,
-            "category": "Deportes",
-            "creationDate": "01/01/2022",
-            "likes": 3,
-            "dislikes": 6,
-            "comments": [
-                {
-                    "commentId": 1,
-                    "author": "Maria Acosta",
-                    "userName": "macosta",
-                    "audioId": 2,
-                    "likes": 100,
-                    "dislikes": 2
-                },
-                {
-                    "commentId": 2,
-                    "author": "Maria Acosta",
-                    "userName": "macosta",
-                    "audioId": 3,
-                    "likes": 100,
-                    "dislikes": 2
-                }
-            ]
-        }
+                "commentId": 1,
+                "author": "Maria Acosta",
+                "userName": "macosta",
+                "audioId": 2,
+                "likes": 100,
+                "dislikes": 2
+            },
+            {
+                "commentId": 2,
+                "author": "Maria Acosta",
+                "userName": "macosta",
+                "audioId": 3,
+                "likes": 100,
+                "dislikes": 2
+            }
         ]
     }
-]
+    ]
+}

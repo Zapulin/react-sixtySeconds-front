@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 //Components
 import IconProfile from './IconProfile'
 import Audio from './Audio'
-import Comments from './Comments'
+import Comment from './Comment'
 
 export default class Post extends Component {
   render() {
@@ -26,7 +26,13 @@ export default class Post extends Component {
         <p>Commentarios {post.comments.length}</p>
         <br/>
         <br/>
-        <Comments comments={post.comments} key={post.id}/>
+        <div>
+          {
+            post.comments.map((comment) =>
+            <Comment comment={comment} key={comment.commentId}/>
+            )
+          }
+        </div>
       </div>
     )
   }
