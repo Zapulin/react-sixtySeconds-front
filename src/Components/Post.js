@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import '../stylesheets/Post.css';
 
 //Components
 import IconProfile from './IconProfile';
@@ -6,18 +7,25 @@ import Audio from './Audio';
 import Comment from './Comment';
 import Likes from './Likes';
 
-export default class Post extends Component {
-  render() {
+function PostTest({ post }) {
 
-    const {post} = this.props
+  const [view, setView] = useState(false);
 
-    return (
-      <div>
+  const viewComments = () => {
+    if (view) {
+      setView(false);
+    }else{
+      setView(true);
+    }
+  }
+
+  return(
+    <div>
         <IconProfile/>
         <p>
           <span>{post.author}</span>
           <span>@{post.userName}</span>
-          <span>{post.creationDate /*TODO: funcion date*/}</span>
+          <span>{post.creationDate }</span>
           <span> dijo...</span>
         </p>
         <br/>
@@ -26,10 +34,8 @@ export default class Post extends Component {
         <Audio url={post.audioUrl}/>
         <Likes isLike={true} likes={post.likes}/>
         <Likes isLike={false} likes={post.dislikes}/>
-        <p>Commentarios {post.comments.length}</p>
-        <br/>
-        <br/>
-        <div>
+        <button onClick={viewComments}>Commentarios {post.comments.length}</button>
+        <div className={ view ? '' : 'hide-comments' }>
           {
             post.comments.map((comment) =>
             <Comment comment={comment} key={comment.commentId}/>
@@ -37,6 +43,7 @@ export default class Post extends Component {
           }
         </div>
       </div>
-    )
-  }
+  );
 }
+
+export default PostTest;

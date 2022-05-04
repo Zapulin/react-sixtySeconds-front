@@ -11,7 +11,7 @@ function Likes({ likes, isLike}) {
   const likeController = () => {
     if(!alreadyLiked) {
       setLike(numLikes + 1);
-      setLiked(true)
+      setLiked(true);
     }
   };
 
