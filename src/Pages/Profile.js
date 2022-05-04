@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 //Components
-
 import HeaderProfile from '../Components/HeaderProfile';
 import Post from '../Components/Post';
 import Login from '../Components/Login';

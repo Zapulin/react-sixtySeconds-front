@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 //Components
-import IconProfile from './IconProfile'
-import Audio from './Audio'
-import Comment from './Comment'
+import IconProfile from './IconProfile';
+import Audio from './Audio';
+import Comment from './Comment';
+import Likes from './Likes';
 
 export default class Post extends Component {
   render() {
@@ -22,7 +23,9 @@ export default class Post extends Component {
         <br/>
         <p>{post.title}</p>
         <br/>
-        <Audio id={post.audioId}/>
+        <Audio url={post.audioUrl}/>
+        <Likes isLike={true} likes={post.likes}/>
+        <Likes isLike={false} likes={post.dislikes}/>
         <p>Commentarios {post.comments.length}</p>
         <br/>
         <br/>

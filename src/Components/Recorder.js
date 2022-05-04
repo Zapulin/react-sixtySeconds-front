@@ -1,93 +1,102 @@
-import React, { useState, useRef } from 'react';
+import React, { Component } from "react";
+import MicRecorder from 'mic-recorder-to-mp3';
+const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 
-function Recorder() {
-  const [stream, setStream] = useState({
-    access: false,
-    recorder: null,
-    error: ""
-  });
+export default class RecorderTest extends Component {
+  constructor(props) {
+    super(props);
 
-  const [recording, setRecording] = useState({
-    active: false,
-    available: false,
-    url: ""
-  });
+    /*
+     * declare states that will enable and disable
+     * buttons that controls the audio widget
+     */
+    this.state = {
+        isRecording: false,
+        blobURL: '',
+        isBlocked: false,
+        isRecordingStp: false,
+      }
 
-  const chunks = useRef([]);
+    //binds the methods to the component
+    this.start = this.start.bind(this);
+    this.stop = this.stop.bind(this);
+    this.reset = this.reset.bind(this);
+   }
 
-  function getAccess() {
-    navigator.mediaDevices
-      .getUserMedia({ audio: true })
-      .then((mic) => {
-        let mediaRecorder;
+  componentDidMount(){
+    //Prompt the user for permission to allow audio device in browser
+    navigator.getUserMedia = (
+      navigator.getUserMedia ||
+      navigator.webkitGetUserMedia ||
+      navigator.mozGetUserMedia ||
+      navigator.msGetUserMedia
+     );
 
-        try {
-          mediaRecorder = new MediaRecorder(mic, {
-            mimeType: "audio/webm"
-          });
-        } catch (err) {
-          console.log(err);
-        }
-
-        const track = mediaRecorder.stream.getTracks()[0];
-        track.onended = () => console.log("ended");
-
-        mediaRecorder.onstart = function () {
-          setRecording({
-            active: true,
-            available: false,
-            url: ""
-          });
-        };
-
-        mediaRecorder.ondataavailable = function (e) {
-          console.log("data available");
-          chunks.current.push(e.data);
-        };
-
-        mediaRecorder.onstop = async function () {
-          console.log("stopped");
-
-          const url = URL.createObjectURL(chunks.current[0]);
-          chunks.current = [];
-
-          setRecording({
-            active: false,
-            available: true,
-            url
-          });
-        };
-
-        setStream({
-          ...stream,
-          access: true,
-          recorder: mediaRecorder
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-        setStream({ ...stream, error });
-      });
+     //Detects the action on user click to allow or deny permission of audio device
+     navigator.getUserMedia({ audio: true },
+      () => {
+        console.log('Permission Granted');
+        this.setState({ isBlocked: false });
+      },
+      () => {
+        console.log('Permission Denied');
+        this.setState({ isBlocked: true })
+      },
+    );
+  }
+ 
+  start(){
+    /*
+     * If the user denys permission to use the audio device
+     * in the browser no recording can be done and an alert is shown
+     * If the user allows permission the recoding will begin
+     */
+    if (this.state.isBlocked) {
+      alert('Permission Denied');
+    } else {
+      Mp3Recorder
+        .start()
+        .then(() => {
+          this.setState({ isRecording: true });
+        }).catch((e) => console.error(e));
+    }
   }
 
-  return (
-    <div className="App">
-      {stream.access ? (
-        <div className="audio-container">
-          <button
-            className={recording.active ? "active" : null}
-            onClick={() => !recording.active && stream.recorder.start()}
-          >
-            Start Recording
-          </button>
-          <button onClick={() => stream.recorder.stop()}>Stop Recording</button>
-          {recording.available && <audio controls src={recording.url} />}
-        </div>
-      ) : (
-        <button onClick={getAccess}>Get Mic Access</button>
-      )}
-    </div>
-  );
-}
+  stop() {
+     /*
+     * Once the recoding starts the stop button is activated
+     * Click stop once recording as finished
+     * An MP3 is generated for the user to download the audio
+     */
+    Mp3Recorder
+      .stop()
+      .getMp3()
+      .then(([buffer, blob]) => {
+        const blobURL = URL.createObjectURL(blob)
+        this.setState({ blobURL, isRecording: false });
+        this.setState({ isRecordingStp: true });
+      }).catch((e) => console.log(e));
+  };
 
-export default Recorder;
+  reset() {
+      /*
+       * The user can reset the audio recording
+       * once the stop button is clicked
+       */
+      document.getElementsByTagName('audio')[0].src = '';
+      this.setState({ isRecordingStp: false });
+  };
+
+  render() {
+
+    //display view of audio widget and control buttons
+    return(
+      <div className="row d-flex justify-content-center mt-5">
+        <button className="btn btn-light" onClick={this.start} disabled={this.state.isRecording}>Record</button>
+        <button className="btn btn-danger" onClick={this.stop} disabled={!this.state.isRecording}>Stop</button>
+        <button className="btn btn-warning" onClick={this.reset} disabled={!this.state.isRecordingStp}>Reset</button>
+        <audio src={this.state.blobURL} controls="controls" />
+      </div>
+    );
+  }
+}

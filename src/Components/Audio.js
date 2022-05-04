@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 //Components
-import Recorder from './RecorderTest'
+import Recorder from './Recorder'
 
 //Audio Samples
 import audioMp3 from '../Samples/AUDIOMP3.mp3'
@@ -17,8 +17,10 @@ export default class Audio extends Component {
     return (
       <div>
         <audio controls>
-          <source src={audioMp3} type="audio/mpeg"/>
-          <source src={audioOgg} type="audio/ogg"/>
+          {
+            console.log(this.props.url)
+          }
+          <source src={require("../Samples/AUDIOMP3.mp3")} type="audio/mpeg"/>
           Your browser does not support the audio tag.
         </audio>
         <Recorder/>
