@@ -4,18 +4,28 @@ import '../stylesheets/Post.css';
 //Components
 import IconProfile from './IconProfile';
 import Audio from './Audio';
+import Recorder from './Recorder';
 import Comment from './Comment';
 import Likes from './Likes';
 
-function PostTest({ post }) {
+function Post({ post }) {
 
   const [view, setView] = useState(false);
+  const [showRecorder, setViewRecorder] = useState(false);
 
   const viewComments = () => {
     if (view) {
       setView(false);
     }else{
       setView(true);
+    }
+  }
+
+  const viewRecorder = () => {
+    if (showRecorder) {
+      setViewRecorder(false);
+    }else{
+      setViewRecorder(true);
     }
   }
 
@@ -35,6 +45,7 @@ function PostTest({ post }) {
         <Likes isLike={true} likes={post.likes}/>
         <Likes isLike={false} likes={post.dislikes}/>
         <button onClick={viewComments}>Commentarios {post.comments.length}</button>
+        <button onClick={viewRecorder}>Responder</button>
         <div className={ view ? '' : 'hide-comments' }>
           {
             post.comments.map((comment) =>
@@ -42,8 +53,11 @@ function PostTest({ post }) {
             )
           }
         </div>
+        <div className={ showRecorder ? '' : 'hide-recorder' }>
+        <Recorder/>  
+        </div>
       </div>
   );
 }
 
-export default PostTest;
+export default Post;
