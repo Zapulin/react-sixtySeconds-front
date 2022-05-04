@@ -23,7 +23,6 @@ export default class Audio extends Component {
           <source src={require("../Samples/AUDIOMP3.mp3")} type="audio/mpeg"/>
           Your browser does not support the audio tag.
         </audio>
-        <Recorder/>
       </div>
     )
   }
