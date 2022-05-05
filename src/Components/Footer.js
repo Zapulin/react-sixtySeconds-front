@@ -3,7 +3,6 @@ import logo from "../Resources/images/logo.svg";
 function Footer() {
   return (
    
-      
       <footer className="bg-dark text-center text-white" >
         <div>
           <div className="container p-2 pb-5 mx-auto">
