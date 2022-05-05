@@ -14,7 +14,7 @@ import CategoryBtn from '../Components/CategoryBtn';
 function Feed() {
 
   const [posts, setPosts] = useState(postsJson);
-  const [postData, setPostsFromApi] = useState();
+  const [postData, setPostsFromApi] = useState([]);
 
   useEffect(() => {
     getPosts();
