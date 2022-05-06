@@ -2,7 +2,7 @@
 function Signup() {
     return (
         <div className="container">
-            <div class="d-flex justify-content-center p-4">
+            <div className="d-flex justify-content-center p-4">
                 <form name="signup" method="POST" action="signup.php">
                     <fieldset>
                         <legend>Registration form</legend><br/>

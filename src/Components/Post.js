@@ -1,33 +1,63 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react';
+import '../stylesheets/Post.css';
 
 //Components
-import IconProfile from './IconProfile'
-import Audio from './Audio'
-import Comments from './Comments'
+import IconProfile from './IconProfile';
+import Audio from './Audio';
+import Recorder from './Recorder';
+import Comment from './Comment';
+import Likes from './Likes';
 
-export default class Post extends Component {
-  render() {
+function Post({ post }) {
 
-    const {post} = this.props
+  const [view, setView] = useState(false);
+  const [showRecorder, setViewRecorder] = useState(false);
 
-    return (
-      <div>
+  const viewComments = () => {
+    if (view) {
+      setView(false);
+    }else{
+      setView(true);
+    }
+  }
+
+  const viewRecorder = () => {
+    if (showRecorder) {
+      setViewRecorder(false);
+    }else{
+      setViewRecorder(true);
+    }
+  }
+
+  return(
+    <div>
         <IconProfile/>
         <p>
           <span>{post.author}</span>
           <span>@{post.userName}</span>
-          <span>{post.creationDate /*TODO: funcion date*/}</span>
+          <span>{post.creationDate }</span>
           <span> dijo...</span>
         </p>
         <br/>
         <p>{post.title}</p>
         <br/>
-        <Audio id={post.audioId}/>
-        <p>Commentarios {post.comments.length}</p>
-        <br/>
-        <br/>
-        <Comments comments={post.comments} key={post.id}/>
+        <Audio url={post.audioUrl}/>
+        <Likes isLike={true} likes={post.likes}/>
+        <Likes isLike={false} likes={post.dislikes}/>
+        <button onClick={viewComments}>Commentarios {post.comments.length}</button>
+        <button onClick={viewRecorder}>Responder</button>
+        <div className={ view ? '' : 'hide' }>
+          {
+            post.comments.map((comment) =>
+            <Comment comment={comment} key={comment.commentId}/>
+            )
+          }
+        </div>
+        <div className={ showRecorder ? '' : 'hide' }>
+        <Recorder/>  
+        </div>
       </div>
-    )
-  }
+  );
 }
+
+export default Post;
