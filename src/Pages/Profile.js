@@ -4,7 +4,6 @@ import {useParams} from 'react-router-dom';
 //API
 import { getProfileFromApi } from '../Services/Api';
 
-
 //Components
 import HeaderProfile from '../Components/HeaderProfile';
 import Post from '../Components/Post';
