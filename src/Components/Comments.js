@@ -1,16 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 //Components
-import Comment from './Comment'
+import Post from "./Post";
 
 export default class Comments extends Component {
-  
   render() {
+    const { comments } = this.props;
 
-    const {comments} = this.props
-
-    return comments.map(comment => 
-    <Comment comment={comment} key={comments.commentId /*Possible error no commentid=undefined*/}/>);
-
+    return comments.map((comment) => (
+      <Post post={comment} key={comment.commentId} isComment />
+    ));
   }
 }

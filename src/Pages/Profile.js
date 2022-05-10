@@ -1,28 +1,20 @@
-import React, { Component } from 'react'
-
+import React, { Component } from "react";
+import { useParams } from "react-router-dom";
 //Components
 
-import HeaderProfile from '../Components/HeaderProfile'
-import Posts from '../Components/Posts'
-import Login from '../Components/Login'
+import HeaderProfile from "../Components/HeaderProfile";
+import Posts from "../Components/Posts";
+import { getProfileById } from "../services/profile";
+// import Login from '../Components/Login'
+export default function Profile() {
+  const { id } = useParams();
 
-//Json
-import data from '../Samples/profile.json'
+  const profile = getProfileById(id);
 
-
-export default class Profile extends Component {
-
-  state = {
-    data: data
-  }
-
-  render() {
-    return (
-      <div>
-        <HeaderProfile profile={data} key={data.userId}/>
-        <Posts posts={data} key={data.userId}/>
-        <Login />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <HeaderProfile profile={profile} />
+      <Posts userId={id} />
+    </div>
+  );
 }
