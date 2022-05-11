@@ -58,14 +58,18 @@ export default class Post extends Component {
             </div>
             <div className="w-100 d-flex justify-content-end">
               <div className="d-flex align-items-center">
-                <Likes likesCount={post.likes} dislikesCount={post.dislikes} />
                 {!isComment && (
+                  
                   <button
                     type="button"
                     className="btn btn-transparent m-2"
                     onClick={() => onClickExpandComments(post)}
                   >
-                    <div className=" d-flex gap-2 align-items-center ">
+                    <div className="d-flex gap-2 align-items-center">
+                      <Likes
+                        likesCount={post.likes}
+                        dislikesCount={post.dislikes}
+                      />
                       <i className="fa fa-comment"></i>
                       <span>comentarios</span>
                       <i
@@ -76,7 +80,7 @@ export default class Post extends Component {
                         }
                       ></i>
                     </div>
-                  </button>
+                  </button> 
                 )}
               </div>
             </div>

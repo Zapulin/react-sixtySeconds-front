@@ -26,11 +26,11 @@ export default class HeaderProfile extends Component {
                 <div className="p-2 mt-2 d-flex justify-content-between">
                   <div>
                     <div className="d-flex flex-column">
-                      <span className="followers">Seguidores</span>{" "}
+                      <span className="followers fw-bold">Seguidores</span>{" "}
                       <span className="nfollowers">{profile.followers}</span>
                     </div>
                     <div className="d-flex flex-column">
-                      <span className="following">Seguidos</span>{" "}
+                      <span className="following fw-bold">Seguidos</span>{" "}
                       <span className="nfollowing">{profile.following}</span>
                     </div>
                   </div>
