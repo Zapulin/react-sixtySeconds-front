@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import '../App.css';
 
 //API
-import { getPostFromAPi } from '../Services/Api';
-
-//Json
-import postsJson from '../Samples/posts.json';
-import '../App.css';
+import { getPostsFromAPi } from '../Services/Api';
 
 //Components
 import Post from '../Components/Post';
@@ -13,20 +10,20 @@ import CategoryBtn from '../Components/CategoryBtn';
 
 function Feed() {
 
-  const [posts, setPosts] = useState(postsJson);
-  const [postData, setPostsFromApi] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     getPosts();
   }, []);
   
   const getPosts = async () => {
-    const response = await getPostFromAPi();
-    setPostsFromApi(response.data)
+    const response = await getPostsFromAPi();
+    setPosts(response.data)
   }; 
 
-  const categoryFilter = category => {
-    const updatedPosts = postsJson.filter(post => post.category === category.toLowerCase());
+  const categoryFilter = async (category) => {
+    const response = await getPostsFromAPi();
+    const updatedPosts = response.data.filter(post => post.category === String(category));
     setPosts(updatedPosts)
   }
 
@@ -64,16 +61,6 @@ function Feed() {
           <Post post={post} key={post.id}/>
           )
         }
-      </div>
-      <div className='test-data'>
-        <ul>
-          <li><h5>THIS DATA IS ONLY FOR TEST</h5></li>
-        {
-          postData.map((post) => {
-            return <li>{post.title}</li>
-          })
-        }
-        </ul>
       </div>
     </div>
   )
