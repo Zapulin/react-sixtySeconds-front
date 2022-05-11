@@ -12,6 +12,7 @@ import Login from '../Components/Login';
 //Json
 import profileJson from '../Samples/profile.json';
 import '../App.css';
+import Publish from '../Components/Publish';
 
 function Profile() {
 
@@ -38,7 +39,7 @@ function Profile() {
           )
         }
         </div>
-        <Login />
+        <Publish />
         <div className="test-data">
           <h5>THIS DATA IS ONLY FOR TEST</h5>
           <h5 className="">{userData.name}</h5>

@@ -33,7 +33,7 @@ function Comment({comment}) {
         <Likes isLike={false} likes={comment.dislikes}/>
         <button onClick={viewRecorder}>Responder</button>
         <div className={ showRecorder ? '' : 'hide' }>
-        <Recorder/>  
+        <Recorder />  
         </div>
     </div>
   );
