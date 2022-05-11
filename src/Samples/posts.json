@@ -4,18 +4,18 @@
         "author": "PacoChistes",
         "userName": "pacoChistes",
         "title": "Va chiste verdeeee #hastag,#hastag,#hastag,#hastag",
-        "audioId": 1,
+        "audioUrl": "../Samples/AUDIOMP3.mp3",
         "userId": 0,
-        "category": "Humor",
+        "category": "humor",
         "creationDate": "01/01/2022",
-        "likes": 3,
+        "likes": 36,
         "dislikes": 6,
         "comments": [
             {
                 "commentId": 0,
                 "author": "Yeray Campos",
                 "userName": "luma",
-                "audioId": 1,
+                "audioUrl": "../Samples/AUDIOMP3.mp3",
                 "likes": 100,
                 "dislikes": 2
             }
@@ -26,18 +26,18 @@
         "author": "JuanRavan",
         "userName": "ravaniño",
         "title": "Debate Gol de messi",
-        "audioId": 2,
+        "audioUrl": "../Samples/AUDIOMP3.mp3",
         "userId": 1,
-        "category": "Deportes",
+        "category": "deportes",
         "creationDate": "01/01/2022",
-        "likes": 3,
+        "likes": 3675,
         "dislikes": 6,
         "comments": [
             {
                 "commentId": 1,
                 "author": "Maria Acosta",
                 "userName": "macosta",
-                "audioId": 2,
+                "audioUrl": "../Samples/AUDIOMP3.mp3",
                 "likes": 100,
                 "dislikes": 2
             },
@@ -45,7 +45,7 @@
                 "commentId": 2,
                 "author": "Maria Acosta",
                 "userName": "macosta",
-                "audioId": 3,
+                "audioUrl": "../Samples/AUDIOMP3.mp3",
                 "likes": 100,
                 "dislikes": 2
             }

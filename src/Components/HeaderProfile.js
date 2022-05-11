@@ -12,7 +12,7 @@ export default class HeaderProfile extends Component {
             <div className="image col-4">
               <img
                 src={ImageProfile}
-                alt=""
+                alt={profile.name}
                 className="rounded-pill"
                 width="155"
               />
