@@ -15,7 +15,6 @@ export default function SearchBar() {
         <input
           className="mr-sm-2 border-0 outline-none"
           type="text"
-          placeholder="Buscar por categorías.."
           onChange={(evt) => findCategorybyText(evt.target.value)}
         />
         <i className="fa fa-search mt-1 fa-lg"></i>

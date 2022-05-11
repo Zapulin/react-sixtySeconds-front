@@ -7,7 +7,7 @@ export default function RegisterModal() {
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header text-center">
-            <h4 className="modal-title w-100 fw-bold">Registrarse</h4>
+            <h4 className="modal-title w-100 font-monospace fw-bold">Registrarse</h4>
             <button
               type="button"
               className="btn-close"
@@ -17,34 +17,34 @@ export default function RegisterModal() {
           <form>
             <div className="modal-body mx-3">
               <div className="md-form mb-3">
-                <label className="fw-bold">Nombre</label>
+                <label className="font-monospace fw-bold">Nombre</label>
                 <input type="text" className="form-control validate" />
               </div>
               <div className="md-form mb-3">
-                <label className="fw-bold">Apellidos</label>
+                <label className="font-monospace fw-bold">Apellidos</label>
                 <input type="text" className="form-control validate" />
               </div>
               <div className="md-form mb-3">
-                <label className="fw-bold">Nombre de usuario</label>
+                <label className="font-monospace fw-bold">Nombre de usuario</label>
                 <input type="text" className="form-control validate" />
               </div>
               <div className="md-form mb-3">
-                <label className="fw-bold">Email</label>
+                <label className="font-monospace fw-bold">Email</label>
                 <input type="email" className="form-control validate" />
               </div>
               <div className="md-form mb-3">
-                <label className="fw-bold">Contraseña</label>
+                <label className="font-monospace fw-bold">Contraseña</label>
                 <input type="password" className="form-control validate" />
               </div>
               <div className="md-form mb-3">
-                <label className="fw-bold">Confirmar Contraseña</label>
+                <label className="font-monospace fw-bold">Confirmar Contraseña</label>
                 <input
                   type="passwordConfirm"
                   className="form-control validate"
                 />
               </div>
               <div>
-                <label className="m-2 fw-bold">
+                <label className="m-2 font-monospace fw-bold">
                   Fecha de nacimiento <input type="date" />{" "}
                 </label>
               </div>
@@ -54,7 +54,7 @@ export default function RegisterModal() {
                   type="checkbox"
                   value=""
                 />
-                <label className="form-check-label fw-bold m-1">
+                <label className="form-check-label font-monospace fw-bold m-1">
                   Acepto la política de privacidad
                 </label>
               </div>

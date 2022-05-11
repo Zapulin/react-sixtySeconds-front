@@ -9,10 +9,10 @@ function NotMemberRegister() {
         style={{ backgroundColor: "#FF8638" }}
       >
         <div className="card-body m-2">
-          <h3 className="card-title fw-bold text-light text-center">
+          <h2 className="card-title font-monospace fw-bold text-light text-center">
             The Audio <pre /> Social Media
-          </h3>
-          <section className="card-text fw-bold text-dark text-center">
+          </h2>
+          <section className="card-text font-monospace fw-bold fs-4 text-dark text-center">
             ¿Aún no eres miembro?
             <pre />
             ¡Regístrate GRATIS! <pre />

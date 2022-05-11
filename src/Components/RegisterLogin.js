@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ImageProfile from "../Samples/profileImg1.jpg";
 
 export default function RegisterLogin() {
-  const [isLogged, setIsLogged] = useState(true);
+  const [isLogged, setIsLogged] = useState(false);
   return (
     <div>
       {isLogged ? (

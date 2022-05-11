@@ -18,7 +18,7 @@ export default class Audio extends Component {
           <source src={audioOgg} type="audio/ogg" />
           Your browser does not support the audio tag.
         </audio>
-        {/* <Recorder/> */}
+     {/* <Recorder/>    */}
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 //Components
-import Post from "./Post";
+import Post from "./Post"
 
 export default class Comments extends Component {
   render() {

@@ -6,7 +6,7 @@ export default function LoginModal() {
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header text-center">
-            <h4 className="modal-title w-100 fw-bold">Iniciar Sesión</h4>
+            <h4 className="modal-title w-100 font-monospace fw-bold">Iniciar Sesión</h4>
             <button
               type="button"
               className="btn-close"
@@ -16,7 +16,7 @@ export default function LoginModal() {
           <div className="modal-body mx-3">
             <div className="md-form mb-2">
               <i className="fa fa-envelope p-2"></i>
-              <label htmlFor="defaultForm-email" className="fw-bold">
+              <label htmlFor="defaultForm-email" className="font-monospace fw-bold">
                 Email
               </label>
               <input
@@ -28,7 +28,7 @@ export default function LoginModal() {
 
             <div className="md-form mb-4">
               <i className="fa fa-key p-2"></i>
-              <label htmlFor="defaultForm-pass" className="fw-bold">
+              <label htmlFor="defaultForm-pass" className="font-monospace fw-bold">
                 Contraseña
               </label>
               <input

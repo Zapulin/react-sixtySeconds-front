@@ -7,7 +7,7 @@ export default class IconProfile extends Component {
       <div>
         <img
           src={photo_profile}
-          alt={profile[0].profileImage}
+          alt={profile.profileImage}
           className="rounded-pill"
           width="155"
         ></img>
