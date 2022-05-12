@@ -2,9 +2,11 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ImageProfile from "../Samples/profileImg1.jpg";
+import { logOut, isLoggedIn } from "../Services/auth";
 
 export default function RegisterLogin() {
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(isLoggedIn);
+
   return (
     <div>
       {isLogged ? (
@@ -29,20 +31,26 @@ export default function RegisterLogin() {
               <i className="fa fa-home"></i>
             </button>
           </Link>
-          <div className="nav-item dropdown">
-            <img
-              src={ImageProfile}
+
+          <div className="nav-item">
+            <Link to="/profile">
+              <img
+                src={ImageProfile}
+                type="button"
+                className="rounded-circle"
+                alt="Avatar"
+                width="42"
+                height="38"
+              />
+            </Link>
+            <button
               type="button"
-              className="rounded-circle"
-              alt="Avatar"
-              width="42"
-              height="38"
-            />{" "}
-            <div className="dropdown-menu">
-              <a href="#" className="dropdown-item">
-                <i className="fa fa-user-o"></i> Profile
-              </a>
-            </div>
+              className="btn btn-dark rounded-circle ms-2 text-white"
+              style={{ backgroundColor: "#403D3D" }}
+              onClick={logOut}
+            >
+              <i class="fa fa-sign-out"></i>
+            </button>
           </div>
         </div>
       ) : (

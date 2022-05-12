@@ -5,7 +5,8 @@ import Post from "./Post"
 
 export default class Comments extends Component {
   render() {
-    const { comments } = this.props;
+    let { comments } = this.props;
+    if (!comments) comments = [];
 
     return comments.map((comment) => (
       <Post post={comment} key={comment.commentId} isComment />

@@ -1,46 +1,46 @@
 import axios from "axios";
 
-const realProfileUrlFromGithub = "https://api.github.com/users/deekshasharma";
-const profileUrl = "https://api.github.com/users/";
+const BASE_URL = "https://sixtyseconds-backend.herokuapp.com/api";
 
-
-/* HEROUKUU SIXTYSECONDS */
-const getPostsUrl = "https://sixtyseconds-backend.herokuapp.com/api/posts"
-const createPostUrl = "https://sixtyseconds-backend.herokuapp.com/api/post/create";
-const getProfileUrl = "https://sixtyseconds-backend.herokuapp.com/api/profile/"
-
-
-export const getProfileFromApiGithub = async (id) => {
-    return axios.get(profileUrl + id);
+export const login  = async (data) => {
+  return await axios.post(BASE_URL + "/auth/login", data)
 };
 
-export const register = async (id) => {
-    
+export const register  = async (data) => {
+  return await axios.post(BASE_URL + "/auth/register", data)
 };
+
+export const getMyProfileFromApi = async (token) => {
+  let config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  return axios.get(BASE_URL + "/profile", config);
+};
+
+export const getProfileFromApi = async (id, token) => {
+  let config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return axios.get(BASE_URL + "/profile/" + id, config);
+};
+
+export const publishPostToBackend = async (data, token) => {
+  axios.post(BASE_URL + "/post/create", data,
+  {
+    headers: {
+      "Content-Type": "multipart/form-data",
+      'Authorization': `Bearer ${token}`,
+    }})
+  .then(res=>{
+    console.log(res.data)
+  })
+}
 
 export const getPostsFromAPi = async () => {
-    return axios.get(getPostsUrl);
+  return axios.get(BASE_URL + "/posts?skip=0&take=20");
 };
-
-export const publishPostToBackend = async (data) => {
-    axios.post(createPostUrl, data,
-    {
-      headers: {
-        "Content-Type": "multipart/form-data",
-        'Authorization': 'Bearer 1|UZ7MUB9ooSbWvPg6IthTZYET4lL1LopVtBQC14eo'
-      }})
-    .then(res=>{
-      console.log(res.data)
-    })
-}
-
-export const getProfileFromApi = async (id) => {
-    return axios.get((getProfileUrl+id), {headers: {
-        'Authorization': 'Bearer 1|UZ7MUB9ooSbWvPg6IthTZYET4lL1LopVtBQC14eo'
-     }});
-}
-
-
-
-
-

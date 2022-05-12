@@ -1,4 +1,5 @@
 import React from "react";
+import Signin from "./Signin";
 
 export default function LoginModal() {
   return (
@@ -14,38 +15,7 @@ export default function LoginModal() {
             ></button>
           </div>
           <div className="modal-body mx-3">
-            <div className="md-form mb-2">
-              <i className="fa fa-envelope p-2"></i>
-              <label htmlFor="defaultForm-email" className="font-monospace fw-bold">
-                Email
-              </label>
-              <input
-                type="email"
-                id="defaultForm-email"
-                className="form-control validate"
-              />
-            </div>
-
-            <div className="md-form mb-4">
-              <i className="fa fa-key p-2"></i>
-              <label htmlFor="defaultForm-pass" className="font-monospace fw-bold">
-                Contraseña
-              </label>
-              <input
-                type="password"
-                id="defaultForm-password"
-                className="form-control validate"
-              />
-            </div>
-          </div>
-          <div className="modal-footer d-flex justify-content-center">
-            <button
-              type="submit"
-              className="btn w-50 rounded-pill container-fluid fw-bold text-light"
-              style={{ backgroundColor: "#403D3D" }}
-            >
-              Iniciar sesión
-            </button>
+          <Signin />
           </div>
         </div>
       </div>
