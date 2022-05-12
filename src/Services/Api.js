@@ -7,7 +7,7 @@ const profileUrl = "https://api.github.com/users/";
 /* HEROUKUU SIXTYSECONDS */
 const getPostsUrl = "https://sixtyseconds-backend.herokuapp.com/api/posts"
 const createPostUrl = "https://sixtyseconds-backend.herokuapp.com/api/post/create";
-const getProfileUrl = "https://sixtyseconds-backend.herokuapp.com/api/profile/4"
+const getProfileUrl = "https://sixtyseconds-backend.herokuapp.com/api/profile/"
 
 
 export const getProfileFromApiGithub = async (id) => {
@@ -34,12 +34,10 @@ export const publishPostToBackend = async (data) => {
     })
 }
 
-export const getProfileFromApi = async () => {
-    return axios.get(getProfileUrl, {headers: {
+export const getProfileFromApi = async (id) => {
+    return axios.get((getProfileUrl+id), {headers: {
         'Authorization': 'Bearer 1|UZ7MUB9ooSbWvPg6IthTZYET4lL1LopVtBQC14eo'
-     }}).then(res=>{
-         console.log(res.data)
-     });
+     }});
 }
 
 

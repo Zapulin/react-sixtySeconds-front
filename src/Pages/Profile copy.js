@@ -16,13 +16,7 @@ import Publish from '../Components/Publish';
 
 function Profile() {
 
-  const [profileData, setProfileData] = useState({
-    userId: 0,
-    followers: 0,
-    following: 0,
-    name: "",
-    posts: []
-  });
+  const [profileData, setProfileData] = useState();
   const params = useParams();
 
   useEffect(() => {
@@ -31,26 +25,34 @@ function Profile() {
   
   const getProfile = async (id) => {
     const response = await getProfileFromApi(id);
-    setProfileData({
-      userId: response.data.userId,
-      followers: response.data.followers,
-      following: response.data.following,
-      name: response.data.name,
-      posts: response.data.posts
-    })
+    console.log(response.data)
+    setProfileData(response.data)
   };  
 
   return(
     <div>
-      <HeaderProfile profile={profileData} key={profileData.userId} />
-      <div>
-      {
+        {profileData.data.userId}
+        <div>
+        {
+          /*
           profileData.posts.map((post) =>
           <Post post={post} key={post.id}/>
           )
+          */
         }
-      </div>  
-    </div>
+        </div>
+        <button
+              className="btn rounded-pill fw-bold text-light"
+              style={{ backgroundColor: "#403D3D" }}
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModalLong"
+              data-bs-backdrop="false"
+            >
+              ver modal
+            </button>
+        <Publish />
+      </div>
   );
 }
 

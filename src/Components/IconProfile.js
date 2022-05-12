@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import photo_profile from "../Samples/profileImg1.jpg";
 import profile from "../Samples/profile.json";
+
 export default class IconProfile extends Component {
+
   render() {
     return (
       <div>
