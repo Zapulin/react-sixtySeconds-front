@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 //Components
 import CategoryBtn from './CategoryBtn';
-import RecorderPublish from './RecorderPublish';
+import Recorder from './Recorder';
 
 
 function Publish() {
@@ -60,7 +60,7 @@ function Publish() {
                   text='Ocio'
                   fnOnClick={getCategory} /> 
               </div>
-              <RecorderPublish title={title} category={category}/>
+                <Recorder title={title} category={category}/>
               </div>
             </div>
           </div>
