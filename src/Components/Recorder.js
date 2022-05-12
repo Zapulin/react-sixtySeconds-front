@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MicRecorder from 'mic-recorder-to-mp3';
+import { getStorageToken } from "../Services/auth.js"
 
 //API
 import { publishPostToBackend } from '../Services/Api';
@@ -100,8 +101,9 @@ function RecorderPublish(props) {
       creationDate: dtstring,
       category: props.category
     }
-
-    publishPostToBackend(data);
+    
+    const token = getStorageToken();
+    publishPostToBackend(data, token);
   
   }
 
