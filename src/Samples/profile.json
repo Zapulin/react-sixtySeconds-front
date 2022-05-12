@@ -1,9 +1,9 @@
 {
     "userId": 0,
     "name": "Paco Leon",
+    "username": "paceleonz",
     "followers": 55365,
     "following": 123456789,
-    "profileImageId": 0,
     "profileImage": "../Samples/profileImg1.jpg",
     "creationDate": "01/01/2022",
     "posts": [

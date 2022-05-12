@@ -17,7 +17,6 @@ import Publish from '../Components/Publish';
 function Profile() {
 
   const [profileData, setProfileData] = useState(profileJson);
-  const [userData, setUserData] = useState({});
   const params = useParams();
 
   useEffect(() => {
@@ -26,7 +25,7 @@ function Profile() {
   
   const getProfile = async (id) => {
     const response = await getProfileFromApi(id);
-    setUserData(response.data)
+    //setUserData(response.data)
   };  
 
   return(
@@ -39,14 +38,17 @@ function Profile() {
           )
         }
         </div>
+        <button
+              className="btn rounded-pill fw-bold text-light"
+              style={{ backgroundColor: "#403D3D" }}
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModalLong"
+              data-bs-backdrop="false"
+            >
+              ver modal
+            </button>
         <Publish />
-        <div className="test-data">
-          <h5>THIS DATA IS ONLY FOR TEST</h5>
-          <h5 className="">{userData.name}</h5>
-          <h5 className="">{userData.location}</h5>
-          <h5 className="">{userData.blog}</h5>
-          <h5 className="">{userData.company}</h5>
-        </div>
       </div>
   );
 }

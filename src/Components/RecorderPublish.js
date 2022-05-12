@@ -8,7 +8,6 @@ const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 
 function RecorderPublish(props) {
 
-    const url = "https://sixtyseconds-backend.herokuapp.com/api/post/create";
     /*
      * declare states that will enable and disable
      * buttons that controls the audio widget
@@ -107,13 +106,47 @@ function RecorderPublish(props) {
   }
 
   return(
-    <div className="row d-flex justify-content-center mt-5">
-      <button className="btn btn-light" onClick={start} disabled={audio.isRecording}>Record</button>
-      <button className="btn btn-danger" onClick={stop} disabled={!audio.isRecording}>Stop</button>
-      <button className="btn btn-warning" onClick={reset} disabled={!audio.isRecordingStp}>Reset</button>
-      <audio src={audio.blobURL} controls="controls" />
-      <button onClick={publish}>Publicar</button>
-    </div>
+    <div className="d-flex justify-content-center mt-5">
+        <div className="d-flex gap-2 align-items-center">
+          <button
+            className="btn m-2 fw-bold text-light"
+            style={{ backgroundColor: "#403D3D" }}
+            onClick={start}
+            disabled={audio.isRecording}
+          >
+            <i className="fa fa-microphone me-2"></i>Record
+          </button>
+        </div>
+        <div className="d-flex gap-2 align-items-center">
+          <button
+            className="btn m-2 fw-bold text-light"
+            style={{ backgroundColor: "#403D3D" }}
+            onClick={stop}
+            disabled={!audio.isRecording}
+          >
+            <i className="fa fa-stop me-2"></i>Stop
+          </button>
+        </div>
+        <div className="d-flex gap-2 align-items-center">
+          <button
+            className="btn m-2 fw-bold text-light"
+            style={{ backgroundColor: "#403D3D" }}
+            onClick={reset}
+            disabled={!audio.isRecordingStp}
+          >
+            <i className="fa fa-rotate-right me-2"></i>Reset
+          </button>
+        </div>
+        <audio src={audio.blobURL} controls="controls" />
+        <button
+            className="btn m-2 fw-bold text-light"
+            style={{ backgroundColor: "#403D3D" }}
+            onClick={publish}
+            disabled={!audio.isRecordingStp}
+          >
+            <i className="fa fa-paper-plane me-2"></i>Publish
+          </button>
+      </div>
   );
 }
 
