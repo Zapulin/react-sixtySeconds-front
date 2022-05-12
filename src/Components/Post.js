@@ -47,7 +47,7 @@ export default function Post({ post }) {
                   <div className="col-sm-12 col-md-2 col-lg-2"></div>
                   <div className="d-flex flex-column">
                     <span className="card-title">{post.title}</span>
-                    <Audio id={post.audioId} />
+                    <Audio audioURL={post.audioURL} />
                   </div>
                 </div>
               </div>

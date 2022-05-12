@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-function Recorder() {
+function RecorderTwo() {
   const [stream, setStream] = useState({
     access: false,
     recorder: null,
@@ -90,4 +90,4 @@ function Recorder() {
   );
 }
 
-export default Recorder;
+export default RecorderTwo;

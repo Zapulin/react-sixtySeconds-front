@@ -84,23 +84,5 @@ import Likes from './Likes'
       </div>
     </div>
   </div>
-
-
-    // <div>
-    //     <IconProfile/>
-    //     <p>
-    //       <span>{comment.author}</span>
-    //       <span>@{comment.userName}</span>
-    //       <span>{comment.creationDate }</span>
-    //       <span> Respondio...</span>
-    //     </p>
-    //     <Audio url={comment.audioUrl}/>
-    //     <Likes isLike={true} likes={comment.likes}/>
-    //     <Likes isLike={false} likes={comment.dislikes}/>
-    //     <button onClick={viewRecorder}>Responder</button>
-    //     <div className={ showRecorder ? '' : 'hide' }>
-    //     <Recorder/>  
-    //     </div>
-    // </div>
   );
 }

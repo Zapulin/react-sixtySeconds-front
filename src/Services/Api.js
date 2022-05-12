@@ -29,6 +29,18 @@ export const getProfileFromApi = async (id, token) => {
   return axios.get(BASE_URL + "/profile/" + id, config);
 };
 
+export const publishPostToBackend = async (data, token) => {
+  axios.post(BASE_URL + "/post/create", data,
+  {
+    headers: {
+      "Content-Type": "multipart/form-data",
+      'Authorization': `Bearer ${token}`,
+    }})
+  .then(res=>{
+    console.log(res.data)
+  })
+}
+
 export const getPostsFromAPi = async () => {
   return axios.get(BASE_URL + "/posts?skip=0&take=20");
 };
