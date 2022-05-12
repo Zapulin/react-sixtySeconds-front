@@ -10,6 +10,10 @@ export const getProfileFromApi = async (id) => {
     return axios.get(profileUrl + id);
 };
 
+export const register = async (id) => {
+    
+};
+
 export const getPostsFromAPi = async () => {
     return axios.get(postsHerouku);
 };

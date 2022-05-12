@@ -1,36 +1,12 @@
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
-  }
-
-
-  .navbar {		
+.navbar {		
     background-color: #FF8638;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
     height: 60px;
-    display: inline-block;
     box-shadow: 0 0 4px rgba(0,0,0,.1);
   }
-  .nav-link img {
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    margin: -8px 0;
-    float: left;
-    margin-right: 10px;
-  }
 
-  button {
+  .button {
     color: #403D3D;
   }
 
