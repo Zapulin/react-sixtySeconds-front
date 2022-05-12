@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MicRecorder from 'mic-recorder-to-mp3';
+import MicRecorder from "mic-recorder-to-mp3";
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 
 export default class Recorder extends Component {
@@ -11,29 +11,29 @@ export default class Recorder extends Component {
      * buttons that controls the audio widget
      */
     this.state = {
-        isRecording: false,
-        blobURL: '',
-        isBlocked: false,
-        isRecordingStp: false,
-      }
+      isRecording: false,
+      blobURL: "",
+      isBlocked: false,
+      isRecordingStp: false,
+    };
 
     //binds the methods to the component
     this.start = this.start.bind(this);
     this.stop = this.stop.bind(this);
     this.reset = this.reset.bind(this);
-   }
+  }
 
-  componentDidMount(){
+  componentDidMount() {
     //Prompt the user for permission to allow audio device in browser
-    navigator.getUserMedia = (
+    navigator.getUserMedia =
       navigator.getUserMedia ||
       navigator.webkitGetUserMedia ||
       navigator.mozGetUserMedia ||
-      navigator.msGetUserMedia
-     );
+      navigator.msGetUserMedia;
 
-     //Detects the action on user click to allow or deny permission of audio device
-     navigator.getUserMedia({ audio: true },
+    //Detects the action on user click to allow or deny permission of audio device
+    navigator.getUserMedia(
+      { audio: true },
       () => {
         //console.log('Permission Granted');
         this.setState({ isBlocked: false });
@@ -44,32 +44,31 @@ export default class Recorder extends Component {
       },
     );
   }
- 
-  start(){
+
+  start() {
     /*
      * If the user denys permission to use the audio device
      * in the browser no recording can be done and an alert is shown
      * If the user allows permission the recoding will begin
      */
     if (this.state.isBlocked) {
-      alert('Permission Denied');
+      alert("Permission Denied");
     } else {
-      Mp3Recorder
-        .start()
+      Mp3Recorder.start()
         .then(() => {
           this.setState({ isRecording: true });
-        }).catch((e) => console.error(e));
+        })
+        .catch((e) => console.error(e));
     }
   }
 
   stop() {
-     /*
+    /*
      * Once the recoding starts the stop button is activated
      * Click stop once recording as finished
      * An MP3 is generated for the user to download the audio
      */
-    Mp3Recorder
-      .stop()
+    Mp3Recorder.stop()
       .getMp3()
       .then(([buffer, blob]) => {
         const blobURL = URL.createObjectURL(blob)
@@ -78,20 +77,20 @@ export default class Recorder extends Component {
         this.getBlob(blob);
         this.setState({ blobURL, isRecording: false });
         this.setState({ isRecordingStp: true });
-      }).catch((e) => console.log(e));
-  };
+      })
+      .catch((e) => console.log(e));
+  }
 
   reset() {
-      /*
-       * The user can reset the audio recording
-       * once the stop button is clicked
-       */
-      document.getElementsByTagName('audio')[0].src = '';
-      this.setState({ isRecordingStp: false });
-  };
+    /*
+     * The user can reset the audio recording
+     * once the stop button is clicked
+     */
+    document.getElementsByTagName("audio")[0].src = "";
+    this.setState({ isRecordingStp: false });
+  }
 
   render() {
-
     //display view of audio widget and control buttons
     return(
       <div className="row d-flex justify-content-center mt-5">

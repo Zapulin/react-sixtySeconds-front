@@ -1,29 +1,43 @@
 import { Link } from "react-router-dom";
+import RegisterModal from "../RegisterModal";
 
 function NotMemberRegister() {
   return (
-    <div
-      className="card rounded m-4 p-2 position-absolute top-50"
-      style={{ background: "#FF8638" }}
-    >
-      <div className="card-body">
-        <h5 className="card-title">The Audio Social Media</h5>
-        <p className="card-text">¿Aún no eres miembro?</p>
-        <p className="card-text">
-          ¡Regístrate <span>GRATIS!</span>
-        </p>
-
-        <div className="d-flex justify-content-between">
-          <Link to="/register">
-            <button className="btn btn-dark rounded-pill">
+    <div className="container">
+      <div
+        className="card rounded m-4 p-2 position-absolute top-50 flex-md-wrap"
+        style={{ backgroundColor: "#FF8638" }}
+      >
+        <div className="card-body m-2">
+          <h2 className="card-title font-monospace fw-bold text-light text-center">
+            The Audio <pre /> Social Media
+          </h2>
+          <section className="card-text font-monospace fw-bold fs-4 text-dark text-center">
+            ¿Aún no eres miembro?
+            <pre />
+            ¡Regístrate GRATIS! <pre />
+          </section>
+          <div className="d-flex justify-content-between">
+            <button
+              className="btn rounded-pill fw-bold text-light"
+              style={{ backgroundColor: "#403D3D" }}
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#registerModal"
+              data-bs-backdrop="false"
+            >
               Registrarse
             </button>
-          </Link>
-          <Link to="/feed">
-            <button className="btn btn-dark ms-2 rounded-pill">
-              Continuar sin registrarse
-            </button>
-          </Link>
+            <RegisterModal />
+            <Link to="/feed">
+              <button
+                className="btn ms-2 rounded-pill container-fluid fw-bold text-light"
+                style={{ backgroundColor: "#403D3D" }}
+              >
+                Continuar sin registrarse
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

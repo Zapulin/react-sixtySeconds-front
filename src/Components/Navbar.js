@@ -1,99 +1,49 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import ImageProfile from "../Samples/profileImg1.jpg";
 import logo from "../Resources/images/dark_logo.svg";
 import "../stylesheets/Navbar.css";
+import SearchBar from "./SearchBar";
+import RegisterLogin from "./RegisterLogin";
 
 function Navbar() {
-  const [isLogged, setIsLogged] = useState(true);
-
   return (
     <header>
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg fixed-top">
         <div className="container-fluid">
-          {/* Logo */}
-          <a href="/" className="navbar-brand">
-            <img src={logo} width="60"/>
-          </a>
           <button
-            type="button"
             className="navbar-toggler"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse1"
+            type="button"
+            data-mdb-toggle="collapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
             <i className="fa fa-bars"></i>
           </button>
-          <div className="collapse navbar-collapse" id="navbarCollapse1">
-            <div className="form my-2 my-lg-0 mx-auto">
-              <input
-                className="form-control mr-sm-2 rounded-pill"
-                type="search"
-                placeholder="Buscar..."
-                aria-label="Search"
+          <div className="collapse navbar-collapse">
+            {/* Navbar brand */}
+            <a className="navbar-brand mt-2 mt-lg-0" href="/">
+              <img
+                src={logo}
+                width="60"
+                height="60"
+                className=" d-inline-block"
+                alt=""
               />
+            </a>
+            <div className="form my-2 my-lg-0 mx-auto">
+              <SearchBar />
             </div>
-            <div className="navbar-nav">
-              {isLogged ? (
-                <div className="d-flex ms-auto gap-2">
-                  <Link to="/feed" >
-                    <button
-                      type="button"
-                      className="btn btn-dark rounded-circle"
-                    >
-                      <i className="fa fa-plus"></i>
-                    </button>
-                  </Link>
-
-                  <Link to="/feed">
-                    {" "}
-                    <button
-                      type="button"
-                      className="btn btn-dark rounded-circle"
-                    >
-                      <i className="fa fa-home"></i>
-                    </button>
-                  </Link>
-
-                  <Link to="/authors">
-                    {" "}
-                    <button
-                      type="button"
-                      className="btn btn-dark rounded-circle"
-                    >
-                      <i className="fa fa-bell"></i>
-                    </button>
-                  </Link>
-
-                  <div className="nav-item dropdown">
-                    <a
-                      href="s"
-                      data-toggle="dropdown-menu"
-                      className="nav-link dropdown-toggle user-action"
-                    >
-                      <img src={ImageProfile} className="avatar" alt="Avatar" />{" "}
-                    </a>
-                    <div className="dropdown-menu">
-                      <a href="s" className="dropdown-item">
-                        <i className="fa fa-user-o"></i> Profile
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="d-flex ms-auto gap-2">
-                  <Link to="/login">
-                    <button type="button" className="btn btn-dark rounded-pill">
-                      Iniciar sesión
-                    </button>
-                  </Link>
-                  <Link to="/register">
-                    <button type="button" className="btn btn-dark rounded-pill">
-                      Registrarse
-                    </button>
-                  </Link>
-                </div>
-              )}
-            </div>
+            <button
+              className="navbar-toggler ml-auto align-items-end"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i className="fas fa-bars"></i>
+            </button>
+            <RegisterLogin />
+            <div className="navbar-nav"></div>
           </div>
         </div>
       </nav>

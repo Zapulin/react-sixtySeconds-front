@@ -1,10 +1,12 @@
-import top_image from "../Resources/images/top_image.svg";
+import top_image from "../Resources/images/top_image.jpg";
 
 //Components
 import NotMemberRegister from "../Components/home/NotMemberRegister";
 import InformationSection from "../Components/home/InformationSection";
+import LoginModal from "../Components/LoginModal";
+import RegisterModal from "../Components/RegisterModal";
 
-function Home() {  
+function Home() {
   return (
     <>
       <div className="fluid">
@@ -14,6 +16,8 @@ function Home() {
         </div>
       </div>
       <InformationSection />
+      <LoginModal />
+      <RegisterModal />
     </>
   );
 }

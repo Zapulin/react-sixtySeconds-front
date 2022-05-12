@@ -14,6 +14,10 @@ export const getProfileFromApiGithub = async (id) => {
     return axios.get(profileUrl + id);
 };
 
+export const register = async (id) => {
+    
+};
+
 export const getPostsFromAPi = async () => {
     return axios.get(getPostsUrl);
 };

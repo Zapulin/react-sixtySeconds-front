@@ -2524,6 +2524,13 @@
   "resolved" "https://registry.npmjs.org/atob/-/atob-2.1.2.tgz"
   "version" "2.1.2"
 
+"audio-react-recorder@^1.0.4":
+  "integrity" "sha512-an7eX0yOGDbZOSu2LvnfWIsI41pkx9nXgtBVbI+9ByS91WKqoVGVb5pbmqHax5sZty2DjOIG/neuxcghIU/ucg=="
+  "resolved" "https://registry.npmjs.org/audio-react-recorder/-/audio-react-recorder-1.0.4.tgz"
+  "version" "1.0.4"
+  dependencies:
+    "prop-types" "^15.7.2"
+
 "autoprefixer@^10.4.6":
   "integrity" "sha512-ypHju4Y2Oav95SipEcCcI5J7CGPuvz8oat7sUtYj3ClK44bldfvtvcxK6IEK++7rqB7YchDGzweZIBG+SD0ZAA=="
   "resolved" "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.7.tgz"
@@ -7131,7 +7138,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@^15.8.1":
+"prop-types@^15.7.2", "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   "version" "15.8.1"
@@ -7354,7 +7361,7 @@
   optionalDependencies:
     "fsevents" "^2.3.2"
 
-"react@^18.0.0", "react@^18.1.0", "react@>= 16", "react@>=16.8":
+"react@^16.0.0", "react@^18.0.0", "react@^18.1.0", "react@>= 16", "react@>=16.8":
   "integrity" "sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.1.0.tgz"
   "version" "18.1.0"

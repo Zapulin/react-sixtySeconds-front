@@ -33,9 +33,11 @@ function Profile() {
         <HeaderProfile profile={profileData} key={profileData.userId}/>
         <div>
         {
+          /*
           profileData.posts.map((post) =>
           <Post post={post} key={post.id}/>
           )
+          */
         }
         </div>
         <button

@@ -6,7 +6,7 @@ import { getPostsFromAPi } from '../Services/Api';
 
 //Components
 import Post from '../Components/Post';
-import CategoryBtn from '../Components/CategoryBtn';
+import Categories from '../Components/Categories';
 
 function Feed() {
 
@@ -33,34 +33,11 @@ function Feed() {
   }
 
   return (
-    <div>
-      <div >
-        <CategoryBtn 
-          text='Humor'
-          fnOnClick={categoryFilter} />
-        <CategoryBtn 
-          text='Deportes'
-          fnOnClick={categoryFilter} />
-        <CategoryBtn 
-          text='Noticias'
-          fnOnClick={categoryFilter} />
-        <CategoryBtn 
-          text='Ciencia'
-          fnOnClick={categoryFilter} />
-        <CategoryBtn 
-          text='Musica'
-          fnOnClick={categoryFilter} />
-        <CategoryBtn 
-          text='Cultura'
-          fnOnClick={categoryFilter} />
-        <CategoryBtn 
-          text='Politica'
-          fnOnClick={categoryFilter} />
-        <CategoryBtn 
-          text='Ocio'
-          fnOnClick={categoryFilter} />          
+    <div className="p-5 mt-3">
+      <div className="my-4">
+        <Categories  categoryFilter={categoryFilter}  />
       </div>
-      <div>
+      <div className="d-flex flex-column gap-2">
         {
           posts.map((post) =>
           <Post post={post} key={post.id}/>
