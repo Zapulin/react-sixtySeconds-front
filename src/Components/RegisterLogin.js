@@ -5,7 +5,6 @@ import ImageProfile from "../Samples/profileImg1.jpg";
 import { logOut, isLoggedIn } from "../Services/auth";
 
 export default function RegisterLogin() {
-  
   const [isLogged, setIsLogged] = useState(isLoggedIn);
 
   return (
@@ -32,25 +31,18 @@ export default function RegisterLogin() {
               <i className="fa fa-home"></i>
             </button>
           </Link>
-          <div className="nav-item dropdown">
-            <img
-              src={ImageProfile}
-              type="button"
-              className="rounded-circle"
-              alt="Avatar"
-              width="42"
-              height="38"
-            />{" "}
-            <div className="dropdown-menu">
-              <a href="#" className="dropdown-item">
-                <i className="fa fa-user-o"></i>Profile
-              </a>
-              <div>
-                <a href="/" onClick={logOut}>
-                  LOGOUT
-                </a>
-              </div>
-            </div>
+
+          <div className="nav-item">
+            <Link to="/profile">
+              <img
+                src={ImageProfile}
+                type="button"
+                className="rounded-circle"
+                alt="Avatar"
+                width="42"
+                height="38"
+              />
+            </Link>
             <button
               type="button"
               className="btn btn-dark rounded-circle ms-2 text-white"

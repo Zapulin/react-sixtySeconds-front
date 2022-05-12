@@ -29,7 +29,8 @@ function Profile() {
 
   const getMyProfile = async (token) => {
     const response = await getMyProfileFromApi(token);
-    const { data } = response.data
+    const data = response.data
+
     if (!data.posts) {
       data.posts = []
     }
@@ -38,7 +39,7 @@ function Profile() {
 
   const getProfile = async (id, token) => {
     const response = await getProfileFromApi(id, token);
-    const { data } = response.data
+    const data = response.data
     if (!data.posts) {
       data.posts = []
     }
@@ -51,7 +52,7 @@ function Profile() {
      <div>
         <HeaderProfile profile={userData} key={userData.userId} />
         {userData.posts && (
-          <div>
+           <div className="container d-flex flex-column gap-2 justify-content-center mb-4">
             {userData.posts.map((post) => (
               <Post post={post} key={post.id} />
             ))}
