@@ -18,42 +18,47 @@ function Feed() {
   
   const getPosts = async () => {
     const response = await getPostsFromAPi();
-    setPosts(response.data)
-  }; 
+    if(response.data.error){
+      console.log(response.data.error)
+    }else{
+      setPosts(response.data)
+    }
+  };
 
   const categoryFilter = async (category) => {
     const response = await getPostsFromAPi();
+    console.log(category)
     const updatedPosts = response.data.filter(post => post.category === String(category));
     setPosts(updatedPosts)
   }
 
   return (
     <div>
-      <div>
+      <div >
         <CategoryBtn 
           text='Humor'
-          categoryFilter={categoryFilter} />
+          fnOnClick={categoryFilter} />
         <CategoryBtn 
           text='Deportes'
-          categoryFilter={categoryFilter} />
+          fnOnClick={categoryFilter} />
         <CategoryBtn 
           text='Noticias'
-          categoryFilter={categoryFilter} />
+          fnOnClick={categoryFilter} />
         <CategoryBtn 
           text='Ciencia'
-          categoryFilter={categoryFilter} />
+          fnOnClick={categoryFilter} />
         <CategoryBtn 
           text='Musica'
-          categoryFilter={categoryFilter} />
+          fnOnClick={categoryFilter} />
         <CategoryBtn 
           text='Cultura'
-          categoryFilter={categoryFilter} />
+          fnOnClick={categoryFilter} />
         <CategoryBtn 
           text='Politica'
-          categoryFilter={categoryFilter} />
+          fnOnClick={categoryFilter} />
         <CategoryBtn 
           text='Ocio'
-          categoryFilter={categoryFilter} />          
+          fnOnClick={categoryFilter} />          
       </div>
       <div>
         {

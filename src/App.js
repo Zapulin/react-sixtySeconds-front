@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //Pages
 import Home from './Pages/Home';
 import Feed from './Pages/Feed';
+import Authors from './Pages/Authors';
 import User from './Pages/Profile';
 import NotFound from './Pages/NotFound';
 import Login from './Components/Login';
@@ -20,6 +21,7 @@ function App() {
         <Route path='/profile/:id' element={<User/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Signup/>} />
+        <Route path='/authors' element={<Authors/>} />
         <Route path='*' element={<NotFound/>} />
       </Routes>
       <Footer/>

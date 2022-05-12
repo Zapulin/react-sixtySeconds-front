@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import MicRecorder from 'mic-recorder-to-mp3';
 const Mp3Recorder = new MicRecorder({ bitRate: 128 });
 
-export default class RecorderTest extends Component {
+export default class Recorder extends Component {
   constructor(props) {
     super(props);
 
@@ -35,11 +35,11 @@ export default class RecorderTest extends Component {
      //Detects the action on user click to allow or deny permission of audio device
      navigator.getUserMedia({ audio: true },
       () => {
-        console.log('Permission Granted');
+        //console.log('Permission Granted');
         this.setState({ isBlocked: false });
       },
       () => {
-        console.log('Permission Denied');
+        //console.log('Permission Denied');
         this.setState({ isBlocked: true })
       },
     );
@@ -73,6 +73,9 @@ export default class RecorderTest extends Component {
       .getMp3()
       .then(([buffer, blob]) => {
         const blobURL = URL.createObjectURL(blob)
+        console.log("blob" + blob)
+        console.log("bloburl" + blobURL)
+        this.getBlob(blob);
         this.setState({ blobURL, isRecording: false });
         this.setState({ isRecordingStp: true });
       }).catch((e) => console.log(e));
@@ -95,6 +98,9 @@ export default class RecorderTest extends Component {
         <button className="btn btn-light" onClick={this.start} disabled={this.state.isRecording}>Record</button>
         <button className="btn btn-danger" onClick={this.stop} disabled={!this.state.isRecording}>Stop</button>
         <button className="btn btn-warning" onClick={this.reset} disabled={!this.state.isRecordingStp}>Reset</button>
+        <form post>
+          <button>publicar</button>
+        </form>
         <audio src={this.state.blobURL} controls="controls" />
       </div>
     );

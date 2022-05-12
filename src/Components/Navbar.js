@@ -35,7 +35,7 @@ function Navbar() {
             <div className="navbar-nav">
               {isLogged ? (
                 <div className="d-flex ms-auto gap-2">
-                  <Link to="/feed">
+                  <Link to="/feed" >
                     <button
                       type="button"
                       className="btn btn-dark rounded-circle"
@@ -54,7 +54,7 @@ function Navbar() {
                     </button>
                   </Link>
 
-                  <Link to="/feed">
+                  <Link to="/authors">
                     {" "}
                     <button
                       type="button"

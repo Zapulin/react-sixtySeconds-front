@@ -1,9 +1,9 @@
 import React from 'react';
 
-function CategoryBtn({ text, categoryFilter }) {
+function CategoryBtn({ text, fnOnClick }) {
     return (
       <button 
-        onClick={() => categoryFilter(text)}>
+        onClick={() => fnOnClick(text)}>
         {text}
       </button>
     );

@@ -41,7 +41,7 @@ function Post({ post }) {
         <br/>
         <p>{post.title}</p>
         <br/>
-        <Audio url={post.audioUrl}/>
+        <Audio url={post.audioURL}/>
         <Likes isLike={true} likes={post.likes}/>
         <Likes isLike={false} likes={post.dislikes}/>
         <button onClick={viewComments}>Commentarios {post.comments.length}</button>
