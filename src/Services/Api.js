@@ -1,19 +1,34 @@
 import axios from "axios";
 
-const gitHubUrl = "https://api.github.com/users/deekshasharma";
+const BASE_URL = "https://sixtyseconds-backend.herokuapp.com/api";
 
-const profileUrl = "https://api.github.com/users/";
-
-const postsHerouku = "https://sixtyseconds-backend.herokuapp.com/api/posts?skip=0&take=20"
-
-export const getProfileFromApi = async (id) => {
-    return axios.get(profileUrl + id);
+export const login  = async (data) => {
+  return await axios.post(BASE_URL + "/auth/login", data)
 };
 
-export const register = async (id) => {
-    
+export const register  = async (data) => {
+  return await axios.post(BASE_URL + "/auth/register", data)
+};
+
+export const getMyProfileFromApi = async (token) => {
+  let config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  return axios.get(BASE_URL + "/profile", config);
+};
+
+export const getProfileFromApi = async (id, token) => {
+  let config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  return axios.get(BASE_URL + "/profile/" + id, config);
 };
 
 export const getPostsFromAPi = async () => {
-    return axios.get(postsHerouku);
+  return axios.get(BASE_URL + "/posts?skip=0&take=20");
 };

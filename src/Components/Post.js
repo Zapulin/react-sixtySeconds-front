@@ -32,13 +32,10 @@ export default function Post({ post }) {
     <div>
       <div className="card p-3">
         <div className="row">
-          <div className="d-flex justify-content-center align-items-center col-sm-12 col-md-4 col-lg-2">
-            <IconProfile
-              className="img-fluid rounded-pill col-md-4 px-0"
-              width="155"
-            />
+          <div className="d-flex justify-content-center align-items-center col-sm-12 col-md-4 col-lg-4">
+            <IconProfile className="img-fluid" width="155" />
           </div>
-          <div className="col-6">
+          <div className="col-sm-8 col-md-6 col-lg-6">
             <div className="rounded text-dark stats p-2">
               <h4 className="mb-0 mt-0">
                 {post.author}
@@ -56,7 +53,7 @@ export default function Post({ post }) {
               </div>
             </div>
           </div>
-          <div className="col-6 col-sm-6 col-md-2 col-lg-4 d-flex justify-content-end">
+          <div className="col-sm-4 col-md-2 col-lg-2 d-flex justify-content-end">
             <div></div>
             <span
               className="px-2 rounded-pill text-white"
@@ -68,39 +65,39 @@ export default function Post({ post }) {
               {post.category}
             </span>
           </div>
-          <div className="w-100 d-flex justify-content-end align-items-center">
-            <div className="d-flex mx-2 align-items-center gap-2">
-              <Likes likes={post.likes} isLike />
-              <Likes likes={post.dislikes} />
+        </div>
+        <div className="d-md-flex d-lg-flex justify-content-end align-items-center">
+          <div className="d-flex m-3 align-items-center gap-2 col-sm-12 col-md-auto col-lg-auto">
+            <Likes likes={post.likes} isLike />
+            <Likes likes={post.dislikes} />
+          </div>
+          <button
+            type="button"
+            className="btn btn-transparent m-1 col-sm-12 col-md-auto col-lg-auto"
+            onClick={viewComments}
+          >
+            <div className="d-flex gap-2 align-items-center">
+              <i className="fa fa-comment"></i>
+              <span> {post.comments?.length} comentarios</span>
+              <i className={view ? "fa fa-sort-up" : "fa fa-sort-down"}></i>
             </div>
-            <button
-              type="button"
-              className="btn btn-transparent m-2"
-              onClick={viewComments}
-            >
-              <div className="d-flex gap-2 align-items-center">
-                <i className="fa fa-comment"></i>
-                <span> {post.comments?.length} comentarios</span>
-                <i className={view ? "fa fa-sort-up" : "fa fa-sort-down"}></i>
-              </div>
-            </button>
-            <button
-              type="button"
-              className="btn btn-transparent m-2"
-              onClick={viewRecorder}
-            >
-              <div className="d-flex gap-2 align-items-center">
-                <i className="fa fa-microphone"></i>
-                <span>Responder</span>
-              </div>
-            </button>
-          </div>
-          <div className={showRecorder ? "" : "hide"}>
-            <Recorder />
-          </div>
-          <div className={view ? "" : "hide"}>
-            <Comments comments={post.comments} />
-          </div>
+          </button>
+          <button
+            type="button"
+            className="btn btn-transparent m-1 col-sm-12 col-md-auto col-lg-auto"
+            onClick={viewRecorder}
+          >
+            <div className="d-flex gap-2 align-items-center">
+              <i className="fa fa-microphone"></i>
+              <span>Responder</span>
+            </div>
+          </button>
+        </div>
+        <div className={showRecorder ? "" : "hide"}>
+          <Recorder />
+        </div>
+        <div className={view ? "" : "hide"}>
+          <Comments comments={post.comments} />
         </div>
       </div>
     </div>

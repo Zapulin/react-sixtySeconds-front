@@ -2,40 +2,52 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 //API
-import { getProfileFromApi } from "../Services/Api";
+import { getMyProfileFromApi, getProfileFromApi } from "../Services/Api";
 
 //Components
 import HeaderProfile from "../Components/HeaderProfile";
 import Post from "../Components/Post";
-import Login from "../Components/Login";
+import { getStorageToken } from "../Services/auth.js"
 
 //Json
-import profileJson from "../Samples/profile.json";
 import "../App.css";
 
 function Profile() {
-  const [profileData, setProfileData] = useState(profileJson);
   const [userData, setUserData] = useState({});
   const params = useParams();
 
   useEffect(() => {
-    getProfile(params.id);
-  }, [params.id]);
+    const token = getStorageToken();
+    if (params && params.id) {
+      getProfile(params.id, token);
+    } else {
+      getMyProfile(token);
+    }
+  }, []);
 
-  const getProfile = async (id) => {
-    const response = await getProfileFromApi(id);
-    console.log(response.data);
+  const getMyProfile = async (token) => {
+    const response = await getMyProfileFromApi(token);
     const data = response.data
     if (!data.posts) {
       data.posts = []
     }
-    setUserData(response.data);
+    setUserData(data.data);
+  };
+
+  const getProfile = async (id, token) => {
+    const response = await getProfileFromApi(id, token);
+    const data = response.data
+    if (!data.posts) {
+      data.posts = []
+    }
+    setUserData(data.data);
   };
 
   return (
-    <div>
-      <div>
-        <HeaderProfile profile={profileData} key={profileData.userId} />
+    <div>     
+     {userData && (
+     <div>
+        <HeaderProfile profile={userData} key={userData.userId} />
         {userData.posts && (
           <div>
             {userData.posts.map((post) => (
@@ -51,7 +63,7 @@ function Profile() {
           <h5 className="">{userData.blog}</h5>
           <h5 className="">{userData.company}</h5>
         </div> */}
-      </div>
+      </div>)}
     </div>
   );
 }

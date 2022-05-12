@@ -13,7 +13,6 @@ export function findCategorybyText(text) {
   const foundCategories = categories.filter((category) =>
     category.name.toLowerCase().includes(text.toLowerCase())
   );
-  console.log(foundCategories);
   return foundCategories;
 }
 

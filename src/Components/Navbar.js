@@ -3,6 +3,7 @@ import "../stylesheets/Navbar.css";
 import SearchBar from "./SearchBar";
 import RegisterLogin from "./RegisterLogin";
 
+
 function Navbar() {
   return (
     <header>
@@ -40,7 +41,7 @@ function Navbar() {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <i className="fas fa-bars"></i>
+              <i className="fa fa-bars"></i>
             </button>
             <RegisterLogin />
             <div className="navbar-nav"></div>
