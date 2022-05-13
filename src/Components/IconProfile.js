@@ -1,19 +1,18 @@
 import React, { Component } from "react";
-import photo_profile from "../Samples/profileImg1.jpg";
-import profile from "../Samples/profile.json";
+import { getProfileImage } from "../lib/GetProfileImage";
 
-export default class IconProfile extends Component {
 
-  render() {
-    return (
-      <div>
-        <img
-          src={photo_profile}
-          alt={profile.profileImage}
-          className="rounded-pill"
-          width="155"
-        ></img>
-      </div>
-    );
-  }
+function IconProfile({userId}){
+  return (
+    <div>
+      <img
+        src={getProfileImage(userId)}
+        alt={userId}
+        className="rounded-pill"
+        width="155"
+      ></img>
+    </div>
+  );
 }
+
+export default IconProfile;

@@ -3,9 +3,9 @@ export const categories = [
   { name: "Noticias", color: "#5F7BD6" },
   { name: "Deportes", color: "#D66B5F" },
   { name: "Ciencia", color: "#3FB252" },
-  { name: "Música", color: "#000000" },
+  { name: "Musica", color: "#000000" },
   { name: "Cultura", color: "#5BC9DB" },
-  { name: "Política", color: "#69E5AB" },
+  { name: "Politica", color: "#69E5AB" },
   { name: "Ocio", color: "#CAD946" },
 ];
 

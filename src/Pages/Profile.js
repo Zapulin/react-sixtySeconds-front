@@ -11,6 +11,7 @@ import { getStorageToken } from "../Services/auth.js"
 
 //Json
 import "../App.css";
+import Publish from '../Components/Publish';
 
 function Profile() {
   const [userData, setUserData] = useState({});
@@ -58,15 +59,8 @@ function Profile() {
             ))}
           </div>
         )}
-        {/* <Login />
-        <div className="test-data">
-          <h5>THIS DATA IS ONLY FOR TEST</h5>
-          <h5 className="">{userData.name}</h5>
-          <h5 className="">{userData.location}</h5>
-          <h5 className="">{userData.blog}</h5>
-          <h5 className="">{userData.company}</h5>
-        </div> */}
       </div>)}
+      <Publish />
     </div>
   );
 }

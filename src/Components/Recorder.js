@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import MicRecorder from 'mic-recorder-to-mp3';
 import { getStorageToken } from "../Services/auth.js"
+import { Link } from "react-router-dom";
+
 
 //API
 import { publishPostToBackend } from '../Services/Api';
@@ -108,6 +110,7 @@ function RecorderPublish(props) {
   }
 
   return(
+    <div>
     <div className="d-flex justify-content-center mt-5">
         <div className="d-flex gap-2 align-items-center">
           <button
@@ -139,13 +142,19 @@ function RecorderPublish(props) {
             <i className="fa fa-rotate-right me-2"></i>Reset
           </button>
         </div>
-        <audio src={audio.blobURL} controls="controls" />
-        <div className="d-flex gap-2 align-items-center">
+      </div>
+      <div className="d-flex flex-column">
+        <div>
+          <audio src={audio.blobURL} controls="controls" />
+        </div>
+      </div>
+      <div className="d-flex gap-2 align-items-center">
           <button
             className="btn m-2 fw-bold text-light"
-            style={{ backgroundColor: "#403D3D" }}
+            style={{ backgroundColor: "#3FB252", width: "100%" }}
             onClick={publish}
             disabled={!audio.isRecordingStp}
+            data-bs-dismiss="modal"
           >
             <i className="fa fa-paper-plane me-2"></i>Publish
           </button>

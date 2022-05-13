@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import ImageProfile from "../Samples/profileImg1.jpg";
+import ImageProfile from "../Resources/images/img-default.jpg";
 import { logOut, isLoggedIn } from "../Services/auth";
 
 export default function RegisterLogin() {
@@ -26,11 +26,12 @@ export default function RegisterLogin() {
               type="button"
               className="btn btn-dark rounded-circle"
               style={{ backgroundColor: "#403D3D" }}
+              data-bs-toggle="modal"
+              data-bs-target="#publishModal"
+              data-bs-backdrop="false"
             >
               <i className="fa fa-plus"></i>
             </button>
-          </Link>
-
           <Link to="/feed">
             {" "}
             <button

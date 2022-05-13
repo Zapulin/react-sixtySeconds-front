@@ -3,7 +3,7 @@ import defaultPosts from "../Samples/posts.json";
 import { generateCreationDateSinceText } from "../utils/posts";
 import Post from "./Post";
 
-export default function Posts() {
+export function Posts() {
   const [posts, setPosts] = useState(defaultPosts);
 
   useEffect(() => {

@@ -7,6 +7,7 @@ import { getPostsFromAPi } from "../Services/Api";
 //Components
 import Post from "../Components/Post";
 import Categories from "../Components/Categories";
+import Publish from "../Components/Publish";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
@@ -38,7 +39,9 @@ function Feed() {
           <Post post={post} key={post.id} />
         ))}
       </div>
+      <Publish />
     </div>
+    
   );
 }
 
