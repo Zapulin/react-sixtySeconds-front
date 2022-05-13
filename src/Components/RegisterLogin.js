@@ -12,16 +12,6 @@ export default function RegisterLogin() {
       {isLogged ? (
 
         <div className="d-flex ms-auto gap-2">
-          <Link to="/authors">
-            <button
-              type="button"
-              className="btn btn-dark rounded-circle"
-              style={{ backgroundColor: "#403D3D" }}
-            >
-              <i className="fa fa-group"></i>
-            </button>
-          </Link>
-          <Link to="/feed">
             <button
               type="button"
               className="btn btn-dark rounded-circle"
@@ -40,6 +30,15 @@ export default function RegisterLogin() {
               style={{ backgroundColor: "#403D3D" }}
             >
               <i className="fa fa-home"></i>
+            </button>
+          </Link>
+          <Link to="/authors">
+            <button
+              type="button"
+              className="btn btn-dark rounded-circle"
+              style={{ backgroundColor: "#403D3D" }}
+            >
+              <i className="fa fa-group"></i>
             </button>
           </Link>
 

@@ -6,8 +6,8 @@ export default function LoginModal() {
     <div className="modal fade" id="loginModal">
       <div className="modal-dialog">
         <div className="modal-content">
-          <div className="modal-header text-center">
-            <h4 className="modal-title w-100 font-monospace fw-bold">Iniciar Sesión</h4>
+          <div className="modal-header text-center" style={{ backgroundColor: "#403D3D"}}>
+            <h4 className="modal-title w-100 font-monospace fw-bold text-light">Iniciar Sesión</h4>
             <button
               type="button"
               className="btn-close"

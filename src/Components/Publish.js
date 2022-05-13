@@ -23,9 +23,9 @@ function Publish() {
     <div>
         <div className="modal fade" id="publishModal" >
           <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header text-center">
-                <h5 className="modal-title w-100 font-monospace fw-bold">Publicar</h5>
+            <div className="modal-content" >
+              <div className="modal-header text-center" style={{ backgroundColor: "#403D3D"}}>
+                <h5 className="modal-title w-100 font-monospace fw-bold text-light">Publicar</h5>
                 <button
                   type="button"
                   className="btn-close"

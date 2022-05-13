@@ -6,8 +6,8 @@ export default function RegisterModal() {
     <div className="modal fade" id="registerModal">
       <div className="modal-dialog">
         <div className="modal-content">
-          <div className="modal-header text-center">
-            <h4 className="modal-title w-100 font-monospace fw-bold">
+          <div className="modal-header text-center" style={{ backgroundColor: "#403D3D"}}>
+            <h4 className="modal-title w-100 font-monospace fw-bold text-light">
               Registrarse
             </h4>
             <button
