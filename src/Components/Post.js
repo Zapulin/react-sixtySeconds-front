@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../stylesheets/Post.css";
+import { Link } from "react-router-dom";
 
 //Components
 import IconProfile from "./IconProfile";
@@ -33,7 +34,7 @@ export default function Post({ post }) {
       <div className="card p-3">
         <div className="row">
           <div className="d-flex justify-content-center align-items-center col-sm-12 col-md-4 col-lg-4">
-            <IconProfile className="img-fluid" width="155" />
+            <IconProfile userId={post.userId} className="img-fluid" width="155" />
           </div>
           <div className="col-sm-8 col-md-6 col-lg-6">
             <div className="rounded text-dark stats p-2">
@@ -41,7 +42,8 @@ export default function Post({ post }) {
                 {post.author}
                 <span> dijo..{post.creationDate}</span>
               </h4>
-              <span>@{post.userName}</span>
+              <span>
+                <Link to={"/profile/" + post.userId}>@{post.nick}</Link></span>
               <div className="p-2 mt-2 d-flex justify-content-between">
                 <div>
                   <div className="col-sm-12 col-md-2 col-lg-2"></div>

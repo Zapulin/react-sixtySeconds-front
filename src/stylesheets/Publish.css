@@ -1,0 +1,15 @@
+.divCategorias {
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+}
+
+.categoryBtn {
+    width: 90px;
+    margin-right: 16px;
+    margin-top: 10px;
+    border-radius: 25px;
+    padding: 5px;
+    border: none;
+    font-weight: bold;
+}

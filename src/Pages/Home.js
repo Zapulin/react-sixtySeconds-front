@@ -5,6 +5,7 @@ import NotMemberRegister from "../Components/home/NotMemberRegister";
 import InformationSection from "../Components/home/InformationSection";
 import LoginModal from "../Components/LoginModal";
 import RegisterModal from "../Components/RegisterModal";
+import Publish from "../Components/Publish";
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
       <InformationSection />
       <LoginModal />
       <RegisterModal />
+      <Publish />
     </>
   );
 }

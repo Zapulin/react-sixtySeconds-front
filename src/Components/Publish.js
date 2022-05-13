@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../stylesheets/Publish.css';
 
 //Components
 import CategoryBtn from './CategoryBtn';
@@ -20,7 +21,7 @@ function Publish() {
 
   return (
     <div>
-        <div className="modal fade" id="exampleModalLong" >
+        <div className="modal fade" id="publishModal" >
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header text-center">
@@ -34,29 +35,37 @@ function Publish() {
               <div className="modal-body mx-3">
               <label className="font-monospace fw-bold">Añade un titulo</label>
               <input className="form-control validate" onChange={(e)=> handleEvent(e)} id="title" value={title} placeholder="Titulo..." type="text"></input>
-              <div>
+              <div className="divCategorias">
                 <CategoryBtn 
+                  style={{ backgroundColor: "#B55BDB", cursor: "pointer" }}
                   text='Humor'
                   fnOnClick={getCategory}/>
                 <CategoryBtn 
+                  style={{ backgroundColor: "#D66B5F", cursor: "pointer" }}
                   text='Deportes'
                   fnOnClick={getCategory} />
                 <CategoryBtn 
+                  style={{ backgroundColor: "#5F7BD6", cursor: "pointer" }}
                   text='Noticias'
                   fnOnClick={getCategory} />
                 <CategoryBtn 
+                  style={{ backgroundColor: "#3FB252", cursor: "pointer" }}
                   text='Ciencia'
                   fnOnClick={getCategory} />
                 <CategoryBtn 
+                  style={{ backgroundColor: "#000000", cursor: "pointer", color: "#fff" }}
                   text='Musica'
                   fnOnClick={getCategory} />
                 <CategoryBtn 
+                  style={{ backgroundColor: "#5BC9DB", cursor: "pointer" }}
                   text='Cultura'
                   fnOnClick={getCategory} />
                 <CategoryBtn 
+                  style={{ backgroundColor: "#69E5AB", cursor: "pointer" }}
                   text='Politica'
                   fnOnClick={getCategory} />
                 <CategoryBtn 
+                  style={{ backgroundColor: "#CAD946", cursor: "pointer" }}
                   text='Ocio'
                   fnOnClick={getCategory} /> 
               </div>

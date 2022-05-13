@@ -1,17 +1,18 @@
 import React, { Component } from "react";
-
-import ImageProfile from "../Samples/profileImg1.jpg";
+import { getProfileImage } from "../lib/GetProfileImage";
 
 export default class HeaderProfile extends Component {
   render() {
     const { profile } = this.props;
+    
+
     return (
       <div className="container mt-5 d-flex justify-content-center col-lg-12">
         <div className="card p-3 mt-5 mb-5">
           <div className="row">
             <div className="image col-4">
               <img
-                src={ImageProfile}
+                src={getProfileImage(profile.userId)}
                 alt={profile.name}
                 className="rounded-pill"
                 width="155"
@@ -21,7 +22,7 @@ export default class HeaderProfile extends Component {
               <div className="rounded text-dark stats p-2">
                 <h4 className="mb-0 mt-0">{profile.name}</h4>
 
-                <span>{profile.name}</span>
+                <span>{profile.nick}</span>
 
                 <div className="p-2 mt-2 d-flex justify-content-between">
                   <div>

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import MicRecorder from 'mic-recorder-to-mp3';
 import { getStorageToken } from "../Services/auth.js"
+import { Link } from "react-router-dom";
+
 
 //API
 import { publishPostToBackend } from '../Services/Api';
@@ -146,6 +148,7 @@ function RecorderPublish(props) {
             style={{ backgroundColor: "#403D3D" }}
             onClick={publish}
             disabled={!audio.isRecordingStp}
+            data-bs-dismiss="modal"
           >
             <i className="fa fa-paper-plane me-2"></i>Publish
           </button>
