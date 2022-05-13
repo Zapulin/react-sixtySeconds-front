@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ImageProfile from "../Resources/images/img-default.jpg";
 import { logOut, isLoggedIn } from "../Services/auth";
-import Publish from "./Publish";
 
 export default function RegisterLogin() {
   const [isLogged, setIsLogged] = useState(isLoggedIn);
