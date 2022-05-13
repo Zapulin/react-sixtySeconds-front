@@ -5,14 +5,14 @@ function NotMemberRegister() {
   return (
     <div className="container">
       <div
-        className="card rounded m-4 p-2 position-absolute top-50 flex-md-wrap"
+        className="card rounded m-1 p-1 position-absolute top-50"
         style={{ backgroundColor: "#FF8638" }}
       >
-        <div className="card-body m-2">
-          <h2 className="card-title font-monospace fw-bold text-light text-center">
+        <div className="card-body">
+          <h3 className="card-title font-monospace fw-bold text-light text-center">
             The Audio <pre /> Social Media
-          </h2>
-          <section className="card-text font-monospace fw-bold fs-4 text-dark text-center">
+          </h3>
+          <section className="card-text font-monospace fw-bold fs-5 text-dark text-center">
             ¿Aún no eres miembro?
             <pre />
             ¡Regístrate GRATIS! <pre />

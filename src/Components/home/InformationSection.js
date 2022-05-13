@@ -1,7 +1,7 @@
 function InformationSection() {
   return (
-    <div className="container p-5">
-      <div className="row m-2">
+    <div className="container p-4 mb-5">
+      <div className="row justify-content-around">
         <div className="col-6">
           <h2
             className="font-monospace fw-bold text-start"
