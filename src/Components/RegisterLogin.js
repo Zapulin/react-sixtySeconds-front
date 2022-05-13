@@ -10,7 +10,17 @@ export default function RegisterLogin() {
   return (
     <div>
       {isLogged ? (
+
         <div className="d-flex ms-auto gap-2">
+          <Link to="/authors">
+            <button
+              type="button"
+              className="btn btn-dark rounded-circle"
+              style={{ backgroundColor: "#403D3D" }}
+            >
+              <i className="fa fa-group"></i>
+            </button>
+          </Link>
           <Link to="/feed">
             <button
               type="button"
@@ -49,7 +59,7 @@ export default function RegisterLogin() {
               style={{ backgroundColor: "#403D3D" }}
               onClick={logOut}
             >
-              <i class="fa fa-sign-out"></i>
+              <i className="fa fa-sign-out"></i>
             </button>
           </div>
         </div>

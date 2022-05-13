@@ -1,1 +1,0 @@
-export const Apiurl = process.env.BASE_URL
